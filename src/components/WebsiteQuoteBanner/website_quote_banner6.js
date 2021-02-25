@@ -8,7 +8,7 @@ export default function WebsiteQuoteBanner6() {
           <div className="WebsiteQuoteBanner gutter-padding light-quote-bg three-word-quote">
             <div bp="grid" className="gutter-padding">
               <div bp="12">
-                <h1 className="three-word-quote-header semibold">We asked our users to
+                <h1 className="three-word-quote-header semibold">We asked our users to&nbsp;
                                       <span className="emphasis">describe Leadrilla in 3 words</span>
                 </h1>
               </div>

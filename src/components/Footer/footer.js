@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
 
 import FloatingShapes from '../FloatingShapes/floating_shapes'
-import logo from '../../assets/svg/leadrilla-logo-horizontal-white.svg'
+import logo from '../../assets/svg/logo.svg'
 
 function Footer() {
   return (
@@ -53,7 +53,7 @@ function Footer() {
                 <br />
                 Lexington, KY 40507
               </p>
-              <p bp="margin-top--lg">
+              <div bp="margin-top--lg">
                 <div bp="margin-bottom--sm">
                   <strong>Questions?</strong>
                 </div>
@@ -62,7 +62,7 @@ function Footer() {
                 <a href="mailto:hello@leadrilla.com?subject=Leadrilla Support Request">
                   hello@leadrilla.com
                 </a>
-              </p>
+              </div>
             </div>
             <div bp="12 2@lg" className="footer-link-group">
               <div className="bold footer-link-group-heading" bp="margin-bottom">

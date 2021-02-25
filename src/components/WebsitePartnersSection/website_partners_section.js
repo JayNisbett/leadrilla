@@ -12,7 +12,7 @@ export default function WebsitePartnersSection() {
     <div className="lr-section WebsitePartnersSection">
       <div bp="grid">
         <div bp="12 10@xl offset-2@xl" className="text-center">
-          <h1>We've partnered with the
+          <h1>We've partnered with the&nbsp;
             <span className="emphasis">best in the biz</span>.
           </h1>
           <div bp="grid">
