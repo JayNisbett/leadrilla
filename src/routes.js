@@ -45,6 +45,18 @@ export const routes = [
         path: '/life',
         component: loadable(() => import('./views/Life/life'))
       },
+      {
+        name: 'Medicare',
+        exact: true,
+        path: '/medicare',
+        component: loadable(() => import('./views/Medicare/medicare'))
+      },
+      {
+        name: 'Login',
+        exact: true,
+        path: '/login',
+        component: loadable(() => import('./views/Login/login'))
+      },
     ]
   },
   
