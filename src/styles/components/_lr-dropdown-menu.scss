@@ -1,0 +1,147 @@
+/*
+Leadrilla dropdown menu designed for use with the navbar
+*/
+
+.lr-dropdown-menu {
+  height: calc(100vh);
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 16px;
+
+  &.close {
+    display: none;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: 800;
+  }
+}
+
+// navbar burger button
+.dark-mode .lr-burger-btn.grey {
+  background-color: $dark-mode-text;
+
+  &:before {
+    background-color: $dark-mode-text;
+  }
+  &:after {
+    background-color: $dark-mode-text;
+  }
+}
+
+.lr-burger-btn {
+  transition-duration: 0.1s;
+  display: block;
+  width: 24px;
+  height: 2px;
+  transform: translateY(13px);
+  background-color: $white;
+
+  &:before {
+    transition-duration: 0.15s;
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    transform: translateY(-400%);
+    background-color: $white;
+  }
+
+  &:after {
+    transition-duration: 0.15s;
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    transform: translateY(300%);
+    background-color: $white;
+  }
+
+  &.close {
+    background: transparent;
+
+    &:before {
+      transform: translateY(50%) rotate(45deg);
+      background-color: black;
+    }
+
+    &:after {
+      transform: translateY(-50%) rotate(-45deg);
+      background-color: black;
+    }
+  }
+
+  &.grey {
+    background-color: $dark-grey;
+    &:before {
+      background-color: $dark-grey;
+    }
+    &:after {
+      background-color: $dark-grey;
+    }
+  }
+}
+
+.org-dash {
+  .lr-burger-btn {
+    transition-duration: 0.1s;
+    display: block;
+    width: 19px;
+    height: 1px;
+    transform: translateY(0); // this can be removed once we update main dash styles
+    background-color: black;
+    margin-top: 7px;
+
+    &:before {
+      transition-duration: 0.15s;
+      content: '';
+      display: block;
+      width: 19px;
+      height: 1px;
+      transform: translateY(-7px);
+      background-color: black;
+    }
+
+    &:after {
+      transition-duration: 0.15s;
+      content: '';
+      display: block;
+      width: 19px;
+      height: 1px;
+      transform: translateY(6px);
+      background-color: black;
+    }
+
+    &.close {
+      background: transparent;
+
+      &:before {
+        transform: translateY(50%) rotate(45deg);
+        background-color: black;
+      }
+
+      &:after {
+        transform: translateY(-50%) rotate(-45deg);
+        background-color: black;
+      }
+    }
+
+    &.grey {
+      background-color: $dark-grey;
+      &:before {
+        background-color: $dark-grey;
+      }
+      &:after {
+        background-color: $dark-grey;
+      }
+    }
+  }
+}

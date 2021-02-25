@@ -1,0 +1,37 @@
+$bar-height: 7px;
+$diameter: 11px;
+
+.progress-bar {
+  width: 100%;
+  height: $bar-height;
+  border-radius: $bar-height / 2;
+  position: relative;
+  background-color: #424e88;
+
+  .progress-bar-filled {
+    position: absolute;
+    height: $bar-height;
+    border-radius: $bar-height / 2;
+    background-color: $green;
+  }
+
+  .progress-bar-circle {
+    width: $diameter;
+    height: $diameter;
+    background-color: $white;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+  }
+
+  .progress-bar-amount {
+    position: absolute;
+    top: 16px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.dark-mode .progress-bar {
+  background-color: $dark-mode-light;
+}

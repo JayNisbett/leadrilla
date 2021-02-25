@@ -1,0 +1,71 @@
+/*
+  Styles for Leadrilla .ghost-card
+*/
+
+.dark-mode {
+  .ghost-card {
+    background: $dark-mode-dark;
+  }
+}
+
+.ghost-card {
+  padding: $lr-padding;
+  background-color: $lighter-grey;
+  min-height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: $border-radius-lg;
+
+  @include up('sm') {
+    min-height: 150px;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.add-icon {
+  background-color: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+
+  @include up('sm') {
+    width: 36px;
+    height: 36px;
+  }
+
+  span {
+    display: block;
+    background-color: $white;
+    width: 14px;
+    height: 2px;
+
+    @include up('sm') {
+      width: 16px;
+      height: 2px;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      background-color: $white;
+      width: 14px;
+      height: 2px;
+      transform: rotate(90deg);
+
+      @include up('sm') {
+        width: 16px;
+        height: 2px;
+      }
+    }
+  }
+}

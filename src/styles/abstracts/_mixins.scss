@@ -1,0 +1,26 @@
+/*
+All Mixins should got in this file.
+*/
+
+/* Media Queries */
+@mixin up($size) {
+  @media (min-width: map_get($screen-sizes, $size)) {
+    @content;
+  }
+}
+
+@mixin down($size) {
+  @media (max-width: map_get($screen-sizes, $size)) {
+    @content;
+  }
+}
+
+@mixin only($size) {
+  $index: index(map_keys($screen-sizes), $size);
+  $min: map_get($screen-sizes, $size);
+  $max: map_get($screen-sizes, nth(map_keys($screen-sizes), $index + 1));
+
+  @media (min-width: #{$min}) and (max-width: #{max - 1px}) {
+    @content;
+  }
+}

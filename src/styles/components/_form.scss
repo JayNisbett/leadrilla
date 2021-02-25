@@ -1,0 +1,342 @@
+.dark-mode form {
+  label {
+    color: $dark-mode-text-light;
+  }
+
+  &.transparent-form {
+    .checkbox-container {
+      input[type='radio'] + label {
+        color: #fff;
+      }
+
+      input[type='radio'] + label::after {
+        border-color: #fff;
+      }
+    }
+
+    label {
+      text-transform: none;
+      font-weight: normal;
+      font-size: 14px;
+    }
+
+    textarea {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.05);
+      border: none !important;
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+
+  input:not([type='checkbox']):not([id^='react-select']),
+  select,
+  textarea {
+    background-color: $dark-mode-dark;
+    border: 2px solid $dark-mode-dark;
+    color: $dark-mode-text;
+
+    &::placeholder {
+      color: $dark-mode-text-light;
+    }
+
+    &.input-light {
+      background-color: $dark-mode-light;
+      border: 1px solid $dark-mode-light;
+
+      &:before {
+        content: ' ';
+        position: absolute;
+        z-index: -1;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+        border: 1px solid $dark-mode-light;
+      }
+
+      &:focus {
+        border: 1px solid $blue;
+      }
+    }
+
+    &.has-error {
+      border-color: $dark-mode-red;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .error-message {
+    font-weight: bold;
+  }
+
+  select {
+    background: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="#{$dark-mode-text}" version="1"><path d="M4 8L0 4h8z"/></svg>')
+      no-repeat 96% 50%;
+  }
+
+  .react-select {
+    .react-select__control {
+      border: none;
+      background: $dark-mode-light;
+
+      .react-select__single-value {
+        color: $dark-mode-text;
+      }
+    }
+
+    .react-select__menu {
+      background: $dark-mode-light;
+
+      .react-select__option {
+        color: $dark-mode-text;
+      }
+
+      .react-select__option--is-focused {
+        background: #333;
+      }
+
+      .react-select__option--is-selected {
+        background: $blue;
+      }
+    }
+
+    .react-select__input {
+      color: $dark-mode-text;
+    }
+  }
+}
+
+form {
+  label {
+    font-size: 12px;
+    color: $dark-grey;
+    text-transform: uppercase;
+  }
+
+  input:not([type='checkbox']):not([id^='react-select']),
+  select,
+  textarea {
+    padding: 13px;
+    margin: 6px 0 0 0;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid $light-grey;
+    font-size: 16px;
+    background-color: $white;
+    border-radius: $border-radius;
+    outline: none;
+
+    &:focus {
+      border-color: $blue;
+    }
+
+    &.has-error {
+      border-color: $red;
+    }
+
+    &:disabled {
+      background-color: $lightest-grey;
+      cursor: not-allowed;
+    }
+
+    &.lr-input-small {
+      padding: 8px;
+      margin: 0;
+    }
+  }
+
+  .error-message {
+    color: $red;
+    opacity: 1;
+    font-size: 11px;
+    display: inline-block;
+    float: right;
+    height: 0px;
+    margin-top: -2px;
+    text-align: right;
+    max-width: 80%;
+    white-space: nowrap;
+
+    &.error-block {
+      display: block;
+      height: auto;
+      float: none;
+      text-align: left;
+      max-width: none;
+      margin: 0px;
+    }
+  }
+
+  .react-select {
+    margin-top: 10px;
+
+    &.has-error .react-select__control {
+      border-color: $red !important;
+    }
+
+    .react-select__menu {
+      z-index: 1001;
+    }
+
+    .react-select__control {
+      border-color: $light-grey !important;
+      box-shadow: none;
+      cursor: pointer;
+
+      &.react-select__control--is-focused {
+        border-color: $blue !important;
+      }
+
+      .react-select__indicators {
+        .react-select__indicator-separator {
+          display: none;
+        }
+      }
+    }
+
+    .react-select__option--is-focused {
+      color: #000;
+      cursor: pointer;
+    }
+
+    .react-select__option--is-selected {
+      color: #fff;
+    }
+  }
+
+  &.transparent-form {
+    .checkbox-container {
+      input[type='radio'] + label {
+        color: #fff;
+      }
+
+      input[type='radio'] + label::before,
+      input[type='radio'] + label::after {
+        border-color: #fff;
+      }
+    }
+
+    input:not([type='checkbox']):not([id^='react-select']) {
+      background: transparent;
+      border: 1px solid #fff;
+    }
+
+    label {
+      color: #fff;
+    }
+
+    .react-select {
+      .react-select__control {
+        background: transparent;
+        color: $white;
+        border: 1px solid $white !important;
+        border-radius: 6px;
+
+        &.react-select__control--is-focused {
+          border-color: $white !important;
+        }
+      }
+
+      .react-select__clear-indicator,
+      .react-select__loading-indicator {
+        color: #fff;
+      }
+
+      .react-select__dropdown-indicator {
+        display: none;
+      }
+
+      .react-select__menu-list {
+        padding: 0;
+        border-radius: 4px;
+      }
+
+      .react-select__placeholder {
+        color: #ffffffbf;
+      }
+
+      .react-select__input {
+        color: #ffffffbf;
+      }
+
+      .react-select__option {
+        color: #000;
+      }
+
+      .react-select__option--is-selected {
+        color: #fff;
+      }
+
+      .react-select__single-value {
+        color: #fff;
+      }
+    }
+  }
+
+  input[type='checkbox'] {
+    display: none;
+
+    & + label {
+      position: relative;
+      text-transform: none;
+      padding-left: 30px;
+      display: inline-block;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    & + label:before,
+    & + label:after {
+      position: absolute;
+    }
+
+    & + label:before {
+      content: '';
+      left: 0;
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      border: 1px solid $light-grey;
+      border-radius: 3px;
+    }
+
+    &:checked + label:after {
+      content: '';
+    }
+
+    & + label:after {
+      content: none;
+      top: 3px;
+      left: 5px;
+      display: inline-block;
+      height: 6px;
+      width: 10px;
+      border-left: 2px solid;
+      border-bottom: 2px solid;
+      transform: rotate(-45deg);
+    }
+  }
+
+  select {
+    padding-right: 15px;
+    -webkit-appearance: none;
+    background: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1"><path d="M4 8L0 4h8z"/></svg>')
+      no-repeat 96% 50%;
+    height: 50px;
+  }
+
+  .form-show-password {
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

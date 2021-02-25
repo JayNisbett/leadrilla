@@ -1,0 +1,1024 @@
+$life-theme-primary-color: #5469c5;
+$life-theme-secondary-color: #23378e;
+$life-theme-tertiary-color: #20212c;
+$life-theme-primary-light-color: #6478cf;
+$life-theme-primary-dark-color: #23378e;
+
+$solar-theme-primary-color: #171823;
+$solar-theme-secondary-color: #63d785;
+$solar-theme-tertiary-color: #252630;
+$solar-theme-primary-light-color: #20212c;
+$solar-theme-primary-dark-color: #12131d;
+
+//$medicare-theme-primary-color: #75127F;
+//$medicare-theme-secondary-color: #ffffff;
+//$medicare-theme-tertiary-color: #ffffff;
+//$medicare-theme-primary-light-color: #822B8B;
+//$medicare-theme-primary-dark-color: #5D0B65;
+
+$medicare-theme-primary-color: #d7246e;
+$medicare-theme-secondary-color: #ffffff;
+$medicare-theme-tertiary-color: #ffffff;
+$medicare-theme-primary-light-color: #df377c;
+$medicare-theme-primary-dark-color: #bd145a;
+
+$white: #ffffff;
+$black: #000000;
+$dark-grey: #333333;
+$grey: #777777;
+$light-grey: #cccccc;
+$lightest-grey: #eeeeee;
+
+html,
+#root,
+html.life-theme,
+html.life-theme #root {
+  background: $lightest-grey;
+}
+
+html.solar-theme,
+html.solar-theme #root {
+  background: $solar-theme-primary-dark-color;
+}
+
+.dark-mode,
+.dark-theme {
+  .FAQ {
+    .accordion {
+      color: $lightest-grey;
+    }
+
+    .panel {
+      color: $white;
+      background: #333;
+    }
+  }
+}
+
+.life-theme {
+  .Navbar {
+    @include down('lg') {
+      &.navbar-primary .logo * {
+        fill: $white !important;
+      }
+
+      .nav-item {
+        color: $white !important;
+      }
+    }
+
+    .nav-item.dashboard-link {
+      color: $white;
+    }
+  }
+}
+
+.solar-theme {
+  color: $white;
+
+  a:not(.btn) {
+    color: $solar-theme-secondary-color;
+
+    &:hover,
+    &:active {
+      color: $solar-theme-secondary-color !important;
+      opacity: 1 !important;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .btn {
+    font-family: $oxanium;
+  }
+
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:focus,
+  .btn-primary:visited {
+    background: $solar-theme-primary-color;
+    color: $white;
+  }
+
+  .btn-secondary,
+  .btn-secondary:hover,
+  .btn-secondary:active,
+  .btn-secondary:focus,
+  .btn-secondary:visited {
+    background: $solar-theme-secondary-color;
+    color: $solar-theme-primary-color;
+  }
+
+  .signup-btn {
+    background-color: $solar-theme-secondary-color !important;
+    color: $solar-theme-primary-color;
+    border: none;
+
+    &.solar-light {
+      background-color: $solar-theme-primary-color !important;
+      color: $white;
+
+      @include down('lg') {
+        background-color: $solar-theme-secondary-color !important;
+        color: $solar-theme-primary-color;
+      }
+    }
+  }
+
+  .login-btn {
+    font-family: $oxanium;
+
+    &.solar-light {
+      color: $solar-theme-primary-color !important;
+
+      @include down('lg') {
+        color: $white !important;
+      }
+    }
+  }
+
+  .primary-text-color {
+    color: $solar-theme-primary-color;
+  }
+
+  .primary-background {
+    background: $solar-theme-primary-color;
+  }
+
+  .secondary-background {
+    background: $solar-theme-secondary-color;
+  }
+
+  .tertiary-background {
+    background: $solar-theme-tertiary-color;
+  }
+
+  .emphasis {
+    color: $solar-theme-secondary-color;
+  }
+
+  .lr-primary-bg {
+    background: $solar-theme-primary-color;
+    background-image: none;
+  }
+
+  .lr-section {
+    background: $solar-theme-primary-color;
+    background-image: none;
+  }
+
+  .WebsitePlatformStats {
+    .platform-content-container {
+      background-image: linear-gradient(180deg, #1c1d27 6%, #242630 100%);
+      background-image: -webkit-linear-gradient(180deg, #1c1d27 0%, #242630 100%);
+      background-color: $solar-theme-primary-light-color;
+
+      .btn {
+        background: $solar-theme-secondary-color;
+        color: $solar-theme-primary-color;
+        border: none;
+      }
+    }
+
+    .platform-stats-container {
+      background: $solar-theme-primary-dark-color;
+
+      h1.website-stat-value {
+        color: $solar-theme-secondary-color;
+        font-family: $oxanium;
+      }
+    }
+  }
+
+  .WebsitePlatformOverview {
+    color: $white;
+
+    .platform-overview-content {
+      background-image: linear-gradient(-90deg, #1c1d27 0%, rgba(28, 29, 39, 0) 100%);
+      background-image: -webkit-linear-gradient(-90deg, #1c1d27 0%, rgba(28, 29, 39, 0) 100%);
+    }
+
+    .platform-overview-item {
+      background: -webkit-linear-gradient(left, $solar-theme-secondary-color 10px, transparent 10px)
+          0 0,
+        -webkit-linear-gradient(right, $solar-theme-secondary-color 10px, transparent 10px) 100% 100%,
+        -webkit-linear-gradient(top, $solar-theme-secondary-color 10px, transparent 10px) 0 0,
+        -webkit-linear-gradient(bottom, $solar-theme-secondary-color 10px, transparent 10px) 100% 100%;
+      background: linear-gradient(to right, $solar-theme-secondary-color 10px, transparent 10px) 0 0,
+        linear-gradient(to left, $solar-theme-secondary-color 10px, transparent 10px) 100% 100%,
+        linear-gradient(to bottom, $solar-theme-secondary-color 10px, transparent 10px) 0 0,
+        linear-gradient(to top, $solar-theme-secondary-color 10px, transparent 10px) 100% 100%;
+      background-repeat: no-repeat;
+      background-size: 108px 108px;
+      border: 1px solid rgba(99, 215, 133, 0.15);
+
+      h2 {
+        color: $solar-theme-secondary-color;
+      }
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  .WebsiteQuoteBanner {
+    background-image: -webkit-linear-gradient(
+      -90deg,
+      $solar-theme-primary-dark-color 0%,
+      $solar-theme-primary-light-color 94%
+    );
+    background-image: linear-gradient(
+      -90deg,
+      $solar-theme-primary-dark-color 0%,
+      $solar-theme-primary-light-color 94%
+    );
+    font-family: $oxanium;
+
+    .btn {
+      background: $solar-theme-secondary-color;
+      color: $solar-theme-primary-color;
+      border: none;
+    }
+
+    .three-word-quote {
+      font-weight: 300;
+    }
+
+    .three-word-quote-author {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+
+  .WebsiteCompliance {
+    h2 {
+      color: $white;
+    }
+  }
+
+  .website-cta-section {
+    p {
+      color: $dark-grey !important;
+    }
+
+    .website-ready-cta-section {
+      background: $white;
+      color: $solar-theme-primary-color;
+
+      .btn {
+        background: $solar-theme-primary-color;
+        color: $white;
+      }
+    }
+
+    .website-not-ready-cta-section {
+      background: $lightest-grey;
+
+      h1,
+      p {
+        color: $solar-theme-primary-color;
+      }
+
+      .btn {
+        border-color: $solar-theme-primary-color;
+        color: $solar-theme-primary-color;
+      }
+    }
+  }
+
+  .Footer {
+    background: $solar-theme-primary-dark-color;
+    color: $lightest-grey !important;
+
+    .FloatingShapes {
+      display: none;
+    }
+
+    a:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  .WebsitePage {
+    .page-header {
+      background: $solar-theme-primary-color;
+      color: $solar-theme-secondary-color;
+
+      p {
+        color: $white;
+      }
+    }
+
+    .page-content {
+      background: $solar-theme-primary-light-color;
+
+      p,
+      ul,
+      li {
+        color: $light-grey;
+      }
+    }
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  form {
+    input,
+    textarea,
+    select,
+    .react-select {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border: none !important;
+      color: $white;
+      border-radius: 6px;
+      height: 52px;
+
+      .react-select__control {
+        border: none;
+        background: transparent;
+      }
+
+      .react-select__single-value {
+        color: #fff;
+      }
+
+      .react-select__menu {
+        color: $dark-grey !important;
+      }
+    }
+
+    label {
+      color: $white;
+    }
+
+    button {
+      background: $solar-theme-secondary-color;
+      border: none;
+      color: $solar-theme-primary-color;
+    }
+
+    .error-message {
+      color: #ff4848 !important;
+    }
+  }
+
+  .checkbox-container input[type='radio'] + label:before {
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  }
+
+  .WebsiteLeadFeedDetailSection,
+  .WebsiteMarketplaceDetailSection {
+    .description-container {
+      background: $white;
+      color: $solar-theme-primary-color;
+
+      p {
+        color: $solar-theme-primary-color;
+      }
+
+      .btn {
+        color: $white;
+        background: $solar-theme-primary-color;
+      }
+    }
+
+    .steps-container {
+      background: $solar-theme-primary-light-color;
+
+      .step-list {
+        label {
+          font-family: $oxanium;
+          padding-top: 6px;
+          border-color: $solar-theme-secondary-color;
+        }
+      }
+    }
+  }
+
+  .WebsiteBadLeadsSection {
+    h1 {
+      color: $solar-theme-secondary-color;
+      font-size: 42px;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+
+    @include down('xl') {
+      h1 {
+        font-size: 38px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    h2,
+    h2 span.emphasis {
+      color: $white !important;
+    }
+
+    .btn {
+      background: $solar-theme-secondary-color;
+      color: $solar-theme-primary-color;
+    }
+
+    .bad-leads-content-section {
+      background: $solar-theme-primary-light-color;
+      background-image: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.04) 2%,
+        rgba(255, 255, 255, 0.01) 98%
+      );
+      background-image: -webkit-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.04) 2%,
+        rgba(255, 255, 255, 0.01) 98%
+      );
+    }
+  }
+
+  .pay-per-lead-section {
+    h1 {
+      color: $white !important;
+    }
+
+    h2 {
+      color: $white;
+      font-family: $oxanium !important;
+    }
+  }
+
+  .light-quote-bg {
+    color: $white !important;
+    background-image: linear-gradient(-180deg, #1f202b 0%, #242630 94%) !important;
+    background-image: -webkit-linear-gradient(-180deg, #1f202b 0%, #242630 94%) !important;
+  }
+
+  .light-quote-bg-reversed {
+    color: $white !important;
+    background-image: linear-gradient(180deg, #1f202b 0%, #242630 94%) !important;
+    background-image: -webkit-linear-gradient(180deg, #1f202b 0%, #242630 94%) !important;
+  }
+
+  .bordered-section {
+    border: 1px solid rgba(99, 215, 133, 0.25);
+    padding: 48px 40px;
+    background: linear-gradient(to right, $solar-theme-secondary-color 10px, transparent 10px) 0 0,
+      linear-gradient(to left, $solar-theme-secondary-color 10px, transparent 10px) 100% 100%,
+      linear-gradient(to bottom, $solar-theme-secondary-color 10px, transparent 10px) 0 0,
+      linear-gradient(to top, $solar-theme-secondary-color 10px, transparent 10px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 108px 108px;
+  }
+
+  .lr-hero-medium {
+    h1 {
+      color: $solar-theme-secondary-color;
+    }
+  }
+
+  .Navbar {
+    .lr-dropdown-menu {
+      background: $solar-theme-primary-dark-color;
+
+      a {
+        color: $white;
+      }
+
+      .btn-white-bordered-blue {
+        color: $white;
+        border-color: $white;
+        background: $solar-theme-primary-color;
+      }
+
+      .btn-primary {
+        background: $solar-theme-secondary-color;
+        color: $solar-theme-primary-color;
+      }
+
+      .lr-burger-btn.close:before {
+        background-color: $white;
+      }
+
+      .lr-burger-btn.close:after {
+        background-color: $white;
+      }
+    }
+
+    .nav-item.dashboard-link {
+      color: $solar-theme-primary-dark-color;
+
+      @include down('lg') {
+        color: $white;
+      }
+    }
+  }
+}
+
+.medicare-theme {
+  a:not(.btn) {
+    color: $medicare-theme-primary-color;
+
+    &:hover,
+    &:active {
+      color: $medicare-theme-primary-dark-color !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:focus,
+  .btn-primary:visited {
+    background: $medicare-theme-primary-color;
+    color: $white;
+  }
+
+  .btn-secondary,
+  .btn-secondary:hover,
+  .btn-secondary:active,
+  .btn-secondary:focus,
+  .btn-secondary:visited {
+    background: $medicare-theme-secondary-color;
+    color: $medicare-theme-primary-color;
+  }
+
+  .signup-btn {
+    background-color: $medicare-theme-secondary-color !important;
+    color: $medicare-theme-primary-color;
+    border: none;
+
+    &.solar-light {
+      background-color: $medicare-theme-primary-color !important;
+      color: $white;
+
+      @include down('lg') {
+        background-color: $medicare-theme-secondary-color !important;
+        color: $medicare-theme-primary-color;
+      }
+    }
+  }
+
+  .btn-white {
+    color: $medicare-theme-primary-color;
+  }
+
+  a.login-btn {
+    font-family: $alegreya;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+
+  .primary-text-color {
+    color: $medicare-theme-primary-color;
+  }
+
+  .primary-background {
+    background: $white;
+  }
+
+  .secondary-background {
+    background: $medicare-theme-secondary-color;
+  }
+
+  .tertiary-background {
+    background: $medicare-theme-tertiary-color;
+  }
+
+  .emphasis {
+    color: $medicare-theme-primary-color;
+  }
+
+  .lr-primary-bg {
+    background: $medicare-theme-primary-color;
+    background-image: none;
+  }
+
+  .lr-section {
+    background: $white;
+    background-image: none;
+  }
+
+  .WebsitePlatformStats {
+    .platform-content-container {
+      background-image: linear-gradient(
+        180deg,
+        $medicare-theme-primary-light-color 6%,
+        $medicare-theme-primary-color 100%
+      );
+      background-image: -webkit-linear-gradient(
+        180deg,
+        $medicare-theme-primary-light-color 6%,
+        $medicare-theme-primary-color 100%
+      );
+      background-color: $medicare-theme-primary-light-color;
+
+      .btn {
+        background: $medicare-theme-secondary-color;
+        color: $medicare-theme-primary-color;
+        border: none;
+      }
+    }
+
+    .platform-stats-container {
+      background: $medicare-theme-primary-dark-color;
+
+      h1.website-stat-value {
+        color: $medicare-theme-secondary-color;
+        font-family: $alegreya;
+      }
+    }
+  }
+
+  .WebsitePlatformOverview {
+    color: #000;
+
+    .platform-overview-item {
+      background: -webkit-linear-gradient(
+            left,
+            $medicare-theme-primary-color 10px,
+            transparent 10px
+          )
+          0 0,
+        -webkit-linear-gradient(right, $medicare-theme-primary-color 10px, transparent 10px) 100% 100%,
+        -webkit-linear-gradient(top, $medicare-theme-primary-color 10px, transparent 10px) 0 0,
+        -webkit-linear-gradient(bottom, $medicare-theme-primary-color 10px, transparent 10px) 100% 100%;
+      background: linear-gradient(to right, $medicare-theme-primary-color 10px, transparent 10px) 0
+          0,
+        linear-gradient(to left, $medicare-theme-primary-color 10px, transparent 10px) 100% 100%,
+        linear-gradient(to bottom, $medicare-theme-primary-color 10px, transparent 10px) 0 0,
+        linear-gradient(to top, $medicare-theme-primary-color 10px, transparent 10px) 100% 100%;
+      background-repeat: no-repeat;
+      background-size: 108px 108px;
+      border: 1px solid rgba(99, 215, 133, 0.15);
+
+      h2 {
+        color: $medicare-theme-secondary-color;
+      }
+
+      a {
+        color: #000;
+      }
+    }
+  }
+
+  .WebsiteQuoteBanner {
+    background-image: -webkit-linear-gradient(
+      -90deg,
+      $medicare-theme-primary-light-color 0%,
+      $medicare-theme-primary-color 94%
+    );
+    background-image: linear-gradient(
+      -90deg,
+      $medicare-theme-primary-light-color 0%,
+      $medicare-theme-primary-color 94%
+    );
+    font-family: $alegreya;
+
+    .btn {
+      background: $medicare-theme-secondary-color;
+      color: $medicare-theme-primary-color;
+      border: none;
+    }
+
+    p {
+      color: $white !important;
+    }
+
+    .three-word-quote {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .three-word-quote-header {
+      color: #fff;
+
+      .emphasis {
+        color: #fff;
+      }
+    }
+
+    .three-word-quote-author {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+
+  .WebsiteCompliance {
+    h2 {
+      color: #000;
+    }
+  }
+
+  .website-cta-section {
+    .website-ready-cta-section {
+      background: $medicare-theme-primary-color;
+      color: $white;
+
+      p {
+        color: $white !important;
+      }
+
+      .btn {
+        background: $white;
+        color: $medicare-theme-primary-color;
+      }
+    }
+
+    .website-not-ready-cta-section {
+      background: $lightest-grey;
+
+      h1,
+      p {
+        color: $medicare-theme-primary-color;
+      }
+
+      .btn {
+        border-color: $medicare-theme-primary-color;
+        color: $medicare-theme-primary-color;
+      }
+    }
+  }
+
+  .Footer {
+    background: $medicare-theme-primary-light-color;
+
+    .FloatingShapes {
+      display: none;
+    }
+
+    a {
+      &:hover,
+      &:active {
+        color: $white !important;
+        opacity: 1 !important;
+        text-decoration: underline !important;
+      }
+    }
+  }
+
+  .split-hero-content {
+    background: $medicare-theme-primary-color;
+  }
+
+  .WebsitePage {
+    .hero-content {
+      p {
+        color: $white !important;
+      }
+
+      a:not(.btn):hover {
+        color: $white !important;
+      }
+    }
+
+    .page-header {
+      background: $medicare-theme-primary-color;
+      color: $white;
+
+      p {
+        color: $white;
+      }
+    }
+
+    .page-content {
+      background: $white;
+
+      p,
+      ul,
+      li {
+        color: #000;
+      }
+    }
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  form {
+    button {
+      background: $medicare-theme-primary-color;
+      border: none;
+      color: $white;
+    }
+  }
+
+  .checkbox-container input[type='radio'] + label:before {
+    border: 1px solid $light-grey;
+  }
+
+  .WebsiteLeadFeedDetailSection,
+  .WebsiteMarketplaceDetailSection {
+    .description-container {
+      background: $medicare-theme-primary-color;
+      color: $white;
+
+      p {
+        color: $white;
+      }
+
+      .btn {
+        color: $medicare-theme-primary-color;
+        background: $white;
+      }
+    }
+
+    .steps-container {
+      background: $medicare-theme-primary-light-color;
+
+      .step-list {
+        label {
+          font-family: $alegreya;
+          padding-top: 6px;
+          border-color: $medicare-theme-secondary-color;
+        }
+
+        p {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .WebsiteBadLeadsSection {
+    h1 {
+      color: $medicare-theme-secondary-color;
+      font-size: 42px;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+
+    p {
+      color: $white !important;
+    }
+
+    @include down('xl') {
+      h1 {
+        font-size: 38px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    h2,
+    h2 span.emphasis {
+      color: $white !important;
+    }
+
+    .btn {
+      background: $medicare-theme-secondary-color;
+      color: $medicare-theme-primary-color;
+    }
+
+    .bad-leads-content-section {
+      background: $medicare-theme-primary-light-color;
+      background-image: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.04) 2%,
+        rgba(255, 255, 255, 0.01) 98%
+      );
+      background-image: -webkit-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.04) 2%,
+        rgba(255, 255, 255, 0.01) 98%
+      );
+    }
+  }
+
+  .pay-per-lead-section {
+    h1 {
+      color: $white !important;
+    }
+
+    h2 {
+      color: $white;
+      font-family: $alegreya !important;
+    }
+  }
+
+  .light-quote-bg {
+    color: $white !important;
+    background-image: linear-gradient(
+      -180deg,
+      $medicare-theme-primary-light-color 0%,
+      $medicare-theme-primary-color 94%
+    ) !important;
+    background-image: -webkit-linear-gradient(
+      -180deg,
+      $medicare-theme-primary-light-color 0%,
+      $medicare-theme-primary-color 94%
+    ) !important;
+  }
+
+  .light-quote-bg-reversed {
+    color: $white !important;
+    background-image: linear-gradient(
+      180deg,
+      $medicare-theme-primary-color 0%,
+      $medicare-theme-primary-light-color 94%
+    ) !important;
+    background-image: -webkit-linear-gradient(
+      180deg,
+      $medicare-theme-primary-color 0%,
+      $medicare-theme-primary-light-color 94%
+    ) !important;
+
+    .emphasis {
+      color: $white;
+    }
+  }
+
+  .bordered-section {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 48px 40px;
+    background: linear-gradient(to right, $medicare-theme-secondary-color 10px, transparent 10px) 0
+        0,
+      linear-gradient(to left, $medicare-theme-secondary-color 10px, transparent 10px) 100% 100%,
+      linear-gradient(to bottom, $medicare-theme-secondary-color 10px, transparent 10px) 0 0,
+      linear-gradient(to top, $medicare-theme-secondary-color 10px, transparent 10px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 108px 108px;
+  }
+
+  .lr-hero-medium {
+    h1 {
+      color: $medicare-theme-secondary-color;
+    }
+  }
+
+  .Navbar {
+    .nav-item {
+      color: #fff !important;
+
+      &:hover,
+      &:active {
+        color: $white !important;
+        opacity: 1 !important;
+      }
+    }
+
+    &.navbar-primary .logo * {
+      fill: $white !important;
+    }
+
+    @include up('lg') {
+      &.navbar-primary .logo * {
+        fill: $white !important;
+      }
+    }
+
+    .nav-item.dashboard-link {
+      color: $white;
+    }
+
+    .lr-dropdown-menu {
+      background: $white;
+
+      a {
+        color: $medicare-theme-primary-color;
+      }
+
+      .btn-white-bordered-blue {
+        background: $white;
+        color: $medicare-theme-primary-color;
+        border-color: $medicare-theme-primary-color;
+      }
+
+      .btn-primary {
+        color: $white;
+        background: $medicare-theme-primary-color;
+      }
+
+      .lr-burger-btn.close:before {
+        background-color: #000000;
+      }
+
+      .lr-burger-btn.close:after {
+        background-color: #000000;
+      }
+    }
+
+    .nav-item.dashboard-link {
+      color: $medicare-theme-primary-dark-color;
+
+      @include down('lg') {
+        color: $white;
+      }
+    }
+  }
+}

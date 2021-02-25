@@ -1,0 +1,106 @@
+/*
+When styling anything in the app this should be the first place you look, can you use these variables?
+If you can't think about how you can make whatever you are doing reusable and add it here.
+*/
+
+/* Colors */
+$primary: #5469c5;
+$secondary: #23378e;
+$white: #ffffff;
+$lightest-grey: #f2f2f2;
+$lighter-grey: #eaeaea;
+$light-grey: #e0e0e0;
+$grey: #999999;
+$dark-grey: #707070;
+$darker-grey: #333333;
+$dark-green: #249d65;
+$green: #77b782;
+$blue: #5469c5;
+$pink: #da3585;
+$red: #b30000;
+$light-blue: #5196f1;
+$heather-green: #7eab86;
+
+$dark-mode-darker: #121212;
+$dark-mode-dark: #1e1e1e;
+$dark-mode-light: #292929;
+$dark-mode-text: #e2e2e2;
+$dark-mode-text-light: #8b9092;
+$dark-mode-red: #ff1919;
+
+/* Spacing */
+$lr-padding-sm: 8px;
+$lr-padding: 16px;
+$lr-padding-lg: 24px;
+$lr-padding-xl: 32px;
+$lr-margin-sm: 8px;
+$lr-margin: 16px;
+$lr-margin-lg: 24px;
+$lr-margin-xl: 32px;
+
+/* Navbar */
+$navbar-bg: $primary;
+$navbar-bg-light: $white;
+$navbar-height: 72px;
+
+/* Misc */
+$lr-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+$lr-box-shadow-top: 0 -2px 12px rgba(0, 0, 0, 0.2);
+$lr-box-shadow-light: 0 1px 8px rgba(0, 0, 0, 0.05);
+$lr-box-shadow-strong: 0 3px 12px rgba(0, 0, 0, 0.25);
+
+/*
+Screen Sizes for media queries. Note that these are only to be used to our own classes when we can't determine this with blueprint.css
+If these change we must also change the native blueprint.css sizes since these follow their sizing.
+*/
+$screen-sizes: (
+  xl: 1440px,
+  lg: 960px,
+  md: 720px,
+  sm: 480px,
+  xs: 0px
+);
+
+$alegreya: 'Alegreya Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+$oxanium: 'Oxanium', sans-serif !important;
+
+$assistant: 'Assistant', sans-serif !important;
+
+$border-radius-sm: 4px;
+$border-radius: 9px;
+$border-radius-lg: 9px;
+
+$font-size-xs: 11px;
+$font-size-sm: 14px;
+$font-size: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+
+// New styles being used on organization dash and possiblity entire dashboard.
+
+$org-dash-border-radius: 24px;
+
+$org-dash-primary: #f1f2f5;
+$org-dash-secondary: #fff;
+$org-dash-tertiary: #eeeeee;
+$org-dash-alternate: #d9d9d9;
+$org-dash-accent: #4f77d8;
+$org-dash-subtle: #d9d9d9;
+$org-dash-primary-font: #000;
+$org-dash-secondary-font: #404040;
+$org-dash-subtle-font: #777777;
+$org-dash-inverse-color: #fff;
+
+$org-dash-margin-sm: 8px;
+$org-dash-margin: 16px;
+$org-dash-margin-md: 24px;
+$org-dash-margin-lg: 32px;
+$org-dash-margin-xl: 48px;
+
+$org-dash-padding-sm: 8px;
+$org-dash-padding: 16px;
+$org-dash-padding-md: 24px;
+$org-dash-padding-lg: 32px;
+$org-dash-padding-xl: 48px;
