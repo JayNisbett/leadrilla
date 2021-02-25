@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 import { UserContext } from '../AuthProvider/auth_provider'
-import logo from '../../assets/svg/leadrilla-icon-white.svg'
+import logo from '../../assets/svg/logo.svg'
 
 function Navbar(props) {
   const [showMobileDropdown, setShowMobileDropdown] = useState(false)
@@ -42,7 +42,7 @@ function Navbar(props) {
         <div bp="grid">
           <div bp="4 offset-5 text-center">
             <Link to="/">
-              <SVG className="logo" src={logo} />
+              <SVG className="logo" src={logo} className="header-logo"/>
             </Link>
           </div>
 
