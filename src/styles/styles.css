@@ -1,7 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,600,700,800);
 @import url(//fonts.googleapis.com/css?family=Assistant:400,700,800);
 @import url(//fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap);
-@charset "UTF-8";
 /*
 This is the main styles file of our applications. 
 This is the point of entry and only stylesheet we should be importing in the app.
@@ -13568,7 +13567,7 @@ html {
 }
 
 .react-tabs__tab--disabled {
-  color: GrayText;
+  color: 'GrayText';
   cursor: default;
 }
 
@@ -13594,9 +13593,4 @@ html {
 
 .react-tabs__tab-panel--selected {
   display: block;
-}
-
-.header-logo {
-  width: 24px;
-  height: 24px;
 }

@@ -39,7 +39,12 @@ export const routes = [
         path: '/',
         component: loadable(() => import('./views/Home/home'))
       },
-     
+      {
+        name: 'Life',
+        exact: true,
+        path: '/life',
+        component: loadable(() => import('./views/Life/life'))
+      },
     ]
   },
   

@@ -6,6 +6,7 @@ import AuthProvider, { UserContext } from './components/AuthProvider/auth_provid
 import NotificationBar from './components/NotificationBar/notification_bar'
 
 import './styles/styles.css'
+import './styles/styles.scss'
 
 render(
   <Router>

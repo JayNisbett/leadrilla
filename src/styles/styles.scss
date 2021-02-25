@@ -1,118 +1,12 @@
-.intro-widget {
-  background-color: #5469c5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  h1 {
-    color: #fff;
-    font-size: 5rem;
-    text-transform: capitalize;
-  }
-  p {
-    color: #fff;
-    font-size: 1.785rem;
-    max-width: 90%;
-    span {
-      font-weight: 600;
-    }
-  }
-  .intro-widget-buttons {
-    button {
-      margin-right: 20px;
-      text-transform: capitalize;
-    }
-    div {
-      padding: 20px 0;
-      a {
-        color: #fff;
-        font-size: 1.2rem;
-        &:hover {
-          color: #5ed822;
-        }
-      }
-    }
-  }
+.split-hero-image {
+  opacity: 1;
+  position: relative;
 }
-.numbers-say {
-  background-color: #fff;
-  padding: 15rem 0;
-  .numbers-say-body {
-    display: flex;
-    align-items: center;
-    position: relative;
-    .numbers-say-content {
-      width: 80%;
-      padding: 12rem 1rem;
-      background-image: linear-gradient(-45deg, #5469c5 0%, #2e429c 100%);
-      h1 {
-        font-size: 4rem;
-        color: #fff;
-      }
-      button {
-        font-size: 1.2rem;
-        text-transform: capitalize;
-      }
-    }
-    .numbers-box {
-      background-color: #223388;
-      position: absolute;
-      right: 0;
-      width: 60%;
-      padding: 3rem;
-      .numbers-box-content {
-        display: flex;
-        .number-item {
-          width: 50%;
-          h1 {
-            color: #fff;
-            font-size: 3rem;
-          }
-        }
-      }
-    }
-  }
-}
-@media (max-width: 1440px) {
-  .intro-widget {
-    padding: 0 15px;
-    h1 {
-      font-size: 4rem;
-    }
-    p {
-      font-size: 1.5rem;
-      span {
-        font-weight: 600;
-      }
-    }
-  }
-}
-
-@media (max-width: 760px) {
-  .intro-widget {
-    padding: 0 15px;
-    h1 {
-      font-size: 3rem;
-    }
-    button {
-      margin-top: 10px;
-      margin-right: 10px;
-    }
-    p {
-      font-size: 1.2rem;
-      span {
-        font-weight: 600;
-      }
-    }
-    .intro-widget-buttons {
-      a {
-        color: #fff;
-        font-size: 1.2rem;
-        &:hover {
-          color: #5ed822;
-        }
-      }
-    }
-  }
+.split-hero-image::before {
+  background-color: #5469c5bb;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
