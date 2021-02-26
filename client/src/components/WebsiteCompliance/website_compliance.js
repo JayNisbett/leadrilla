@@ -25,8 +25,8 @@ export default function WebsiteCompliance() {
               <h2 bp="margin-bottom">Our&nbsp;
                 <span className="emphasis">approach</span>
               </h2>
-              <p>Every lead that comes into the Leadrilla platform has provided consent to be contacted by us and our partners (you, the buyer). We store evidence of this so you are protected. However, it is important that you understand current regulations and abide by them at all times. If a lead requests that you stop contacting them, stop contacting them.</p>
-              <p>Leadrilla has also teamed up with industry experts so we can constantly monitor the everchanging federal and state regulations regarding consumer protection. We’re a proud, active member of LeadsCouncil, which you can learn more about&nbsp;
+              <p>Every lead that comes into the liveleads platform has provided consent to be contacted by us and our partners (you, the buyer). We store evidence of this so you are protected. However, it is important that you understand current regulations and abide by them at all times. If a lead requests that you stop contacting them, stop contacting them.</p>
+              <p>liveleads has also teamed up with industry experts so we can constantly monitor the everchanging federal and state regulations regarding consumer protection. We’re a proud, active member of LeadsCouncil, which you can learn more about&nbsp;
                 <a href="https://www.leadscouncil.org/" target="_blank" rel="noopener noreferrer">here</a>.
               </p>
               <p>It is in our best interest to keep you compliant, and we’re always here to help and answer questions you may have.</p>

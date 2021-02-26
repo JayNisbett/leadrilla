@@ -47,7 +47,7 @@ function Footer() {
           <div bp="grid">
             <div bp="12 4@lg">
               <SVG className="full-width footer-logo" src={logo} />
-              <p>&copy; 2021 Leadrilla Inc. All rights reserved.</p>
+              <p>&copy; 2021 liveleads Inc. All rights reserved.</p>
               <p bp="margin-top--lg">
                 401 West Main Street, Suite 204
                 <br />
@@ -59,8 +59,8 @@ function Footer() {
                 </div>
                 Email us at:
                 <br />
-                <a href="mailto:hello@leadrilla.com?subject=Leadrilla Support Request">
-                  hello@leadrilla.com
+                <a href="mailto:hello@liveleads.com?subject=liveleads Support Request">
+                  hello@liveleads.com
                 </a>
               </div>
             </div>

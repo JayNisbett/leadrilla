@@ -79,7 +79,7 @@ export default function IntroHero() {
             <h1>"Almost" is the same as "Never"</h1>
           </div>
           <div bp="12 10@xl">
-            <p>Join thousands of people growing their business with Leadrilla - the only platform that gives you full control over your lead flow. <strong>Ready? Select your industry.</strong>
+            <p>Join thousands of people growing their business with liveleads - the only platform that gives you full control over your lead flow. <strong>Ready? Select your industry.</strong>
             </p>
           </div>
           <div bp="12 10@lg 8@xl">

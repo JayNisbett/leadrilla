@@ -25,7 +25,7 @@ function JoinFacebookGroup() {
           <span className="announcement-pill lr-md-text bold">
             <div bp="flex">
               <div bp="fill" className="announcement-link" onClick={() => setShowModal(true)}>
-                Join the Leadrilla Community on Facebook!
+                Join the liveleads Community on Facebook!
               </div>
               <div bp="fit margin-left--sm" className="grey-text" onClick={dismissAlert}>
                 &#10005;
@@ -42,7 +42,7 @@ function JoinFacebookGroup() {
           >
             <FacebookProvider appId="731970987171836">
               <Group
-                href="https://www.facebook.com/groups/leadrilla"
+                href="https://www.facebook.com/groups/liveleads"
                 width="300"
                 showSocialContext
                 showMetaData

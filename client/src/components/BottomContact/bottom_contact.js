@@ -9,7 +9,7 @@ export default function BottonContact() {
           <div bp="grid" className="website-cta-section">
             <div bp="12 7@lg" className="website-ready-cta-section">
               <h1>Ready?</h1>
-              <p>Start growing your business today with Leadrilla’s automated lead generation platform. We can’t wait to see you grow.</p>
+              <p>Start growing your business today with liveleads’s automated lead generation platform. We can’t wait to see you grow.</p>
               <a className="btn btn-white btn-xl" href="/signup">Get started</a>
             </div>
             <div bp="12 5@lg" className="website-not-ready-cta-section">

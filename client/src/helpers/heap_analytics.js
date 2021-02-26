@@ -9,7 +9,7 @@ const userProperties = [
   'postal_code',
   'created_at'
 ]
-const prefix = 'Leadrilla Properties - '
+const prefix = 'liveleads Properties - '
 
 const identifyUser = email => {
   window.heap.identify(email, 'email')

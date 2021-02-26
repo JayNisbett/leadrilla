@@ -9,7 +9,7 @@ export default function WebsiteQuoteBanner6() {
             <div bp="grid" className="gutter-padding">
               <div bp="12">
                 <h1 className="three-word-quote-header semibold">We asked our users to&nbsp;
-                                      <span className="emphasis">describe Leadrilla in 3 words</span>
+                                      <span className="emphasis">describe liveleads in 3 words</span>
                 </h1>
               </div>
               <div bp="12 6@md 4@lg">

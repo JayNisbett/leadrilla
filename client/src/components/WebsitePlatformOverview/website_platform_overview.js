@@ -18,7 +18,7 @@ export default function WebsitePlatformOverview() {
                 </h1>
               </div>
               <div bp="12 7@lg" className="platform-overview-content light-grey-gradient-bg">
-                <p>Leadrilla has two ways of purchasing leads. Lead Feeds let you run your own ads in your area to generate leads for your business. The marketplace has leads that our system has already generated. We recommend utilizing both and compare what gives you a better ROI.</p>
+                <p>liveleads has two ways of purchasing leads. Lead Feeds let you run your own ads in your area to generate leads for your business. The marketplace has leads that our system has already generated. We recommend utilizing both and compare what gives you a better ROI.</p>
               </div>
             </div>
             <div bp="grid" className="gutter-padding">
@@ -26,7 +26,7 @@ export default function WebsitePlatformOverview() {
                 <div className="platform-overview-item bordered-section lead-feed-overview">
                   <h2>Lead Feeds</h2>
                   <h3>Exclusive, real-time leads.</h3>
-                  <p>Lead feeds are the core of the Leadrilla platform. With a Lead Feed, you set up a few parameters and our software starts running ads on your behalf. When consumers fill out a form, the lead is provided to you within seconds.</p>
+                  <p>Lead feeds are the core of the liveleads platform. With a Lead Feed, you set up a few parameters and our software starts running ads on your behalf. When consumers fill out a form, the lead is provided to you within seconds.</p>
                   <a className="bold" href="/lead-feeds">Learn more</a>
                 </div>
               </div>

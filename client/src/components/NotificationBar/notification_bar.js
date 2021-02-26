@@ -15,7 +15,7 @@ const reducer = (state, action) => {
         message: action.message || (
           <>
             Oops, something went wrong! Don't worry - this one's on us. If the problem persists,
-            please email us at <a href="mailto:hello@leadrilla.com">hello@leadrilla.com</a>.
+            please email us at <a href="mailto:hello@liveleads.com">hello@liveleads.com</a>.
           </>
         )
       }

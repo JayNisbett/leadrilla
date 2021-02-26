@@ -2022,7 +2022,7 @@ Files inside this folder should contain all styles relating to a reusable compon
 }
 
 /*
-  Styling for basic Leadrilla card. Most content in a dashboard page should go inside a card.
+  Styling for basic liveleads card. Most content in a dashboard page should go inside a card.
 
   Font inside of cards should be styled as follows:
   - Title: <h2>
@@ -2158,7 +2158,7 @@ Files inside this folder should contain all styles relating to a reusable compon
 }
 
 /*
-  Styles for Leadrilla .ghost-card
+  Styles for liveleads .ghost-card
 */
 
 .dark-mode .ghost-card {
@@ -2562,7 +2562,7 @@ form .form-show-password:hover {
 }
 
 /*
-Leadrilla dropdown menu designed for use with the navbar
+liveleads dropdown menu designed for use with the navbar
 */
 
 .lr-dropdown-menu {
@@ -3496,7 +3496,7 @@ Leadrilla dropdown menu designed for use with the navbar
 }
 
 /*
-  Styles for Leadrilla Action Bar
+  Styles for liveleads Action Bar
 */
 
 .lr-notification-bar {

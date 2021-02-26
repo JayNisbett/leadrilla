@@ -6,8 +6,8 @@ import { isEmpty } from 'lodash'
 import { DateTime } from 'luxon'
 import ReactPixel from 'react-facebook-pixel'
 
-import logo from '../../assets/svg/leadrilla-icon-white.svg'
-import logo_black from '../../assets/svg/leadrilla-icon-black.svg'
+import logo from '../../assets/svg/liveleads-icon-white.svg'
+import logo_black from '../../assets/svg/liveleads-icon-black.svg'
 import { MEDIUM } from '../../constants/screen_sizes'
 import { UserContext } from '../AuthProvider/auth_provider'
 import { OK } from '../../constants/error_codes'
@@ -174,9 +174,9 @@ function Dashboard(props) {
               Have a question? Email us at{' '}
               <a
                 className="bold"
-                href="mailto:hello@leadrilla.com?subject=Leadrilla Support Request"
+                href="mailto:hello@liveleads.com?subject=liveleads Support Request"
               >
-                hello@leadrilla.com
+                hello@liveleads.com
               </a>
             </p>
             <button id="logout-btn" className="nav-link white-text" onClick={logOut}>
@@ -213,7 +213,7 @@ function Dashboard(props) {
       <div bp="grid vertical-center" style={{ minHeight: '100%' }}>
         <div bp="12" className="text-center lr-large-text">
           <div>
-            Leadrilla is currently down for maintenance, which is expected to last for approximately
+            liveleads is currently down for maintenance, which is expected to last for approximately
             30 minutes. We apologize for any inconvenience caused.
           </div>
           <Link to="/" className="blue-text">

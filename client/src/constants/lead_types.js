@@ -10,7 +10,7 @@ export const LEAD_TYPES = [
     name: 'Final Expense',
     price: '$20',
     handle: 'final-expense-insurance-leads',
-    images: [<img src={fxAdSample} alt="Leadrilla Final Expense Leads" />],
+    images: [<img src={fxAdSample} alt="liveleads Final Expense Leads" />],
     description: (
       <span>
         <p>
@@ -39,7 +39,7 @@ export const LEAD_TYPES = [
     name: 'Final Expense Pro',
     price: '$30',
     handle: 'final-expense-pro-insurance-leads',
-    images: [<img src={fxAdSample} alt="Leadrilla Final Expense Leads" />],
+    images: [<img src={fxAdSample} alt="liveleads Final Expense Leads" />],
     description: (
       <span>
         <p>
@@ -83,7 +83,7 @@ export const LEAD_TYPES = [
           </p>
           <p>
             If you'd like to try our Final Expense Pro leads in your area please reach out to us at{' '}
-            <a href="mailto:hello@leadrilla.com">hello@leadrilla.com</a>.
+            <a href="mailto:hello@liveleads.com">hello@liveleads.com</a>.
           </p>
         </p>
       </span>
@@ -102,7 +102,7 @@ export const LEAD_TYPES = [
     name: 'Spanish Final Expense',
     price: '$25',
     handle: 'spanish-final-expense-insurance-leads',
-    images: [<img src={fxAdSample} alt="Leadrilla Spanish Final Expense Leads" />],
+    images: [<img src={fxAdSample} alt="liveleads Spanish Final Expense Leads" />],
     description: (
       <span>
         <p>
@@ -133,7 +133,7 @@ export const LEAD_TYPES = [
     images: [
       <img
         src={mpImg}
-        alt="Leadrilla Mortgage Protection Leads Ad Example - Happy Couple with Family"
+        alt="liveleads Mortgage Protection Leads Ad Example - Happy Couple with Family"
       />
     ],
     description: (
@@ -171,11 +171,11 @@ export const LEAD_TYPES = [
     images: [
       <img
         src={medSupImg1}
-        alt="Leadrilla Medicare Supplement Medigap Leads - Another Rate Increase"
+        alt="liveleads Medicare Supplement Medigap Leads - Another Rate Increase"
       />,
       <img
         src={medSupImg2}
-        alt="Leadrilla Medicare Supplement Medigap Leads - Happy couple - Plans are available for you"
+        alt="liveleads Medicare Supplement Medigap Leads - Happy couple - Plans are available for you"
       />
     ],
     description: (
@@ -209,12 +209,12 @@ export const LEAD_TYPES = [
     name: 'Agent Hiring',
     price: '$17',
     handle: 'agent-hiring',
-    images: [<img src={agentHiringImg} alt="Leadrilla Agent Hiring Leads" />],
+    images: [<img src={agentHiringImg} alt="liveleads Agent Hiring Leads" />],
     description: (
       <span>
         <p>
           Looking to grow your agency but don't have the time to post jobs every week, run ads, and
-          do your own agent outreach? With Leadrilla, all you need to do is turn on a Lead Feed for
+          do your own agent outreach? With liveleads, all you need to do is turn on a Lead Feed for
           Agent Hiring leads and sit back.
         </p>
         <p>

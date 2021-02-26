@@ -36,14 +36,14 @@ function LeadSoldEntry(props) {
             {props.verticalId === 1 ? (
               <p className="small">
                 To mark this lead as a sale, please enter the total annual premium amount for all
-                policies sold to this lead. This will help Leadrilla improve the quality of any
+                policies sold to this lead. This will help liveleads improve the quality of any
                 future leads you may purchase and provide detailed analytics to you as you use the
                 platform.
               </p>
             ) : (
               <p className="small">
                 To mark this lead as a sale, please enter the total dollar value of the project.
-                This will help Leadrilla improve the quality of any future leads you may purchase
+                This will help liveleads improve the quality of any future leads you may purchase
                 and provide detailed analytics to you as you use the platform.
               </p>
             )}

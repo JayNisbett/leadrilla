@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../../assets/svg/leadrilla-icon-black.svg'
+import logo from '../../assets/svg/liveleads-icon-black.svg'
 import Loader from '../Loader/loader'
 import jsPdf from 'jspdf'
 import { saveAs } from 'file-saver'
