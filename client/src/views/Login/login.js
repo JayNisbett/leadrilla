@@ -1,9 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios"
 import isEmail from "is-email";
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login() {
+  const dispatch = useDispatch();
+
+  const token = useSelector(store => (store?.auth ?? {}))?.data?.token ?? ''
+  useEffect(() => {
+    dispatch({
+      type: 'UPDATE_AUTH_COLSURE',
+      payload: (state) => { console.log(state); return state}
+    })
+  }, [])
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  const [emailError, setEmailError] = useState();
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    axios.post("http://localhost:5000/api/users/login", {
+      email: email,
+      password: password
+    }).then(res => {
+      dispatch({type: 'SET_AUTH', payload: res})
+    })
+  }
 
   return (
     <div>
@@ -24,16 +57,16 @@ export default function Login() {
           <div className="page-content">
             <div bp="grid container" className="system-padding login-content">
               <div bp="12 8@sm offset-3@sm 6@md offset-4@md 4@lg offset-5@lg margin-top--lg" className="card login-card">
-                <form>
+                <form onSubmit={handleLogin}>
                   <p className="hide"></p>
                   <div bp="margin-bottom">
-                    <p className="error-message"></p>
+                    <p className="error-message">{emailError}</p>
                     <label>Email Address</label>
                     <input
                       type="email"
                       name="email"
-                      id="email"
-                      value={email}
+                      onChange={handleEmail}
+                      defaultValue={email}
                     />
                   </div>
                   <div bp="margin-bottom">
@@ -42,18 +75,22 @@ export default function Login() {
                     <input
                       type="password"
                       name="password"
-                      id="password"
-                      value={password}
+                      defaultValue={password}
+                      onChange={handlePassword}
                     />
                   </div>
-                  <button type="submit" bp="margin-bottom" className="btn btn-lg btn-block btn-blue">Login</button>
+                  <button
+                    type="submit"
+                    bp="margin-bottom"
+                    className="btn btn-lg btn-block btn-blue"
+                  >Login</button>
                 </form>
                 <a className="small" href="/forgot-password">Forgot Password?</a>
                 <a bp="float-right" className="small" href="/signup">Sign Up</a>
               </div>
-              <div bp="12 text-center">
+              {/* <div bp="12 text-center">
                 <button className="btn-link small">Sign in with Facebook</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -57,6 +57,12 @@ export const routes = [
         path: '/login',
         component: loadable(() => import('./views/Login/login'))
       },
+      {
+        name: 'SignUp',
+        exact: true,
+        path: '/signup',
+        component: loadable(() => import('./views/SingUp/signup'))
+      },
     ]
   },
   

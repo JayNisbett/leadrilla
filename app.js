@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
 
-const articles = require('./routes/articlesRoute.js');
 const users = require('./routes/usersRoute.js');
 const config = require('./config.js');
 
@@ -16,9 +15,11 @@ mongoose.connect('mongodb://localhost:27017/liveleads', {
     useNewUrlParser: true,
     useCreateIndex: true
 });
+
 mongoose.connection.on('connected', () => {
     console.log('Connected to MongoDB');
 });
+
 mongoose.connection.on('error', (error) => {
     console.log(error);
 });
@@ -41,7 +42,6 @@ app.use((req, res, next) => {
      next();
 });
 
-app.use('/api/articles', articles);
 app.use('/api/users', users);
 
 app.get('*', (req, res) => {
