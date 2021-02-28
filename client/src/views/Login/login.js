@@ -1,23 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
-import isEmail from "is-email";
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login() {
   const dispatch = useDispatch();
 
-  const token = useSelector(store => (store?.auth ?? {}))?.data?.token ?? ''
-  useEffect(() => {
-    dispatch({
-      type: 'UPDATE_AUTH_COLSURE',
-      payload: (state) => { console.log(state); return state}
-    })
-  }, [])
-
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
-  const [emailError, setEmailError] = useState();
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
@@ -34,7 +23,8 @@ export default function Login() {
       email: email,
       password: password
     }).then(res => {
-      dispatch({type: 'SET_AUTH', payload: res})
+      console.log(res, "rews")
+      dispatch({ type: 'SET_AUTH', payload: res })
     })
   }
 
@@ -60,7 +50,7 @@ export default function Login() {
                 <form onSubmit={handleLogin}>
                   <p className="hide"></p>
                   <div bp="margin-bottom">
-                    <p className="error-message">{emailError}</p>
+                    <p className="error-message"></p>
                     <label>Email Address</label>
                     <input
                       type="email"
