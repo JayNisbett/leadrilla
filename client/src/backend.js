@@ -1,6 +1,6 @@
 import semver from 'semver'
 
-import { UNAUTHORIZED } from './constants/error_codes'
+// import { UNAUTHORIZED } from './constants/error_codes'
 
 const backend = async (method, uri, body, { headers } = {}) => {
   headers = {
@@ -39,7 +39,7 @@ const backend = async (method, uri, body, { headers } = {}) => {
 
   if (
     !uri.includes('login') &&
-    response.status === UNAUTHORIZED &&
+    // response.status === UNAUTHORIZED &&
     responseBody.message === 'Account disabled'
   ) {
     alert('Your account has been disabled. You will now be logged out.')
@@ -63,8 +63,8 @@ const backend = async (method, uri, body, { headers } = {}) => {
   }
 }
 
-;['get', 'post', 'put', 'delete'].forEach(method => {
-  backend[method] = backend.bind(null, method)
-})
+  ;['get', 'post', 'put', 'delete'].forEach(method => {
+    backend[method] = backend.bind(null, method)
+  })
 
 export default backend

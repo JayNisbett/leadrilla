@@ -12,8 +12,8 @@ import { MEDIUM } from '../../constants/screen_sizes'
 import { UserContext } from '../AuthProvider/auth_provider'
 import { OK } from '../../constants/error_codes'
 import backend from '../../backend'
-import JoinFacebookGroup from '../JoinFacebookGroup/join_facebook_group'
-import RemainingSpendForReferralBanner from '../RemainingSpendForReferralBanner/remaining_spend_for_referral_banner'
+import JoinFacebookGroup from '../JoinFaceBookGroup/join_facebook_group'
+// import RemainingSpendForReferralBanner from '../RemainingSpendForReferralBanner/remaining_spend_for_referral_banner'
 
 export const DarkModeContext = React.createContext(null)
 
@@ -26,37 +26,37 @@ function Dashboard(props) {
   const [sideBarOpenClass, setSideBarOpenClass] = useState(false)
   const { user, setUser, removeUser } = useContext(UserContext)
 
-  useEffect(() => {
-    ReactPixel.init(
-      '131421414731031',
-      {
-        external_id: user.id.toString()
-      },
-      {
-        autoConfig: true,
-        debug: true
-      }
-    )
-  }, [])
+  // useEffect(() => {
+  //   ReactPixel.init(
+  //     '131421414731031',
+  //     {
+  //       external_id: user.id.toString()
+  //     },
+  //     {
+  //       autoConfig: true,
+  //       debug: true
+  //     }
+  //   )
+  // }, [])
 
   // If a user hasn't completed Onboarding, send them there
-  if (
-    !user.onboarded &&
-    !(
-      props.location.pathname.includes('onboarding') || props.location.pathname.includes('settings')
-    )
-  ) {
-    props.history.push('/dash/onboarding')
-  }
+  // if (
+  //   !user.onboarded &&
+  //   !(
+  //     props.location.pathname.includes('onboarding') || props.location.pathname.includes('settings')
+  //   )
+  // ) {
+  //   props.history.push('/dash/onboarding')
+  // }
 
-  const credits =
-    user.points > 0
-      ? (user.points / 100).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-      : '0.00'
+  // const credits =
+  //   user.points > 0
+  //     ? (user.points / 100).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  //     : '0.00'
 
   const logOut = () => {
-    removeUser()
-    props.history.push('/')
+    // removeUser()
+    // props.history.push('/')
   }
 
   const openSideBar = () => {
@@ -80,19 +80,20 @@ function Dashboard(props) {
     }
   }, [])
 
-  useEffect(() => {
-    if (!user.city) {
-      props.history.push('/signup/info')
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (!user.city) {
+  //     props.history.push('/signup/info')
+  //   }
+  // }, [])
 
-  const hasRecommendations = !user.amount_spent && !isEmpty(user.recommendations)
+  // const hasRecommendations = !user.amount_spent && !isEmpty(user.recommendations)
 
   const navItems = [
     { to: '/dash/metrics', text: 'Metrics', admin: true, user: false },
     { to: '/dash/lead-feeds', text: 'Lead Feeds', admin: true, user: true },
     { to: '/dash/marketplace', text: 'Marketplace', admin: true, user: true },
-    { to: '/dash/leads', text: user.is_admin ? 'Leads' : 'My Leads', admin: true, user: true },
+    { to: '/dash/leads', text: 'My Leads', admin: true, user: true },
+    // { to: '/dash/leads', text: user.is_admin ? 'Leads' : 'My Leads', admin: true, user: true },
     { to: '/dash/billing', text: 'Billing', admin: false, user: true },
     { to: '/dash/users', text: 'Users', admin: true, user: false },
     { to: '/dash/products', text: 'Products', admin: true, user: false },
@@ -114,7 +115,7 @@ function Dashboard(props) {
           </div>
 
           <div bp="margin-top--lg">
-            {!user.onboarded ? (
+            {/* {!user.onboarded ? (
               <>
                 <NavLink
                   to="/dash/onboarding"
@@ -134,43 +135,43 @@ function Dashboard(props) {
                   Settings
                 </NavLink>
               </>
-            ) : (
-              <>
-                {hasRecommendations ? (
+            ) : ( */}
+            <>
+              {/* {hasRecommendations ? ( */}
+              <NavLink
+                to="/dash/onboarding"
+                className="nav-link"
+                activeClassName="nav-link-active"
+                onClick={closeSideBar}
+              >
+                Get Started
+                </NavLink>
+              {/* ) : null} */}
+
+              {navItems.map((item, i) => {
+                // if ((user.is_admin && item.admin) || (!user.is_admin && item.user)) {
+                return (
                   <NavLink
-                    to="/dash/onboarding"
+                    key={i}
+                    to={item.to}
                     className="nav-link"
                     activeClassName="nav-link-active"
                     onClick={closeSideBar}
                   >
-                    Get Started
+                    {item.text}
                   </NavLink>
-                ) : null}
-
-                {navItems.map((item, i) => {
-                  if ((user.is_admin && item.admin) || (!user.is_admin && item.user)) {
-                    return (
-                      <NavLink
-                        key={i}
-                        to={item.to}
-                        className="nav-link"
-                        activeClassName="nav-link-active"
-                        onClick={closeSideBar}
-                      >
-                        {item.text}
-                      </NavLink>
-                    )
-                  }
-                  return null
-                })}
-              </>
-            )}
+                )
+                // }
+                // return null
+              })}
+            </>
+            {/* )} */}
           </div>
 
-          <RemainingSpendForReferralBanner />
+          {/* <RemainingSpendForReferralBanner /> */}
 
           <div className="nav-bottom dark-grey-text">
-            <p bp="margin-bottom--lg" className="font-size-sm">
+            {/* <p bp="margin-bottom--lg" className="font-size-sm">
               Have a question? Email us at{' '}
               <a
                 className="bold"
@@ -178,7 +179,7 @@ function Dashboard(props) {
               >
                 hello@liveleads.com
               </a>
-            </p>
+            </p> */}
             <button id="logout-btn" className="nav-link white-text" onClick={logOut}>
               Sign out
             </button>
@@ -188,7 +189,7 @@ function Dashboard(props) {
     )
   }
 
-  const isImpersonation = user.impersonator && user.impersonator.email
+  // const isImpersonation = user.impersonator && user.impersonator.email
 
   const cancelImpersonation = async () => {
     const {
@@ -202,11 +203,11 @@ function Dashboard(props) {
     }
   }
 
-  const [darkMode, setDarkMode] = useState(user.dark_mode)
+  // const [darkMode, setDarkMode] = useState(user.dark_mode)
 
-  const hasNotDismissedFbBanner = !user.metadata || !user.metadata.dismissed_fb_group_banner
-  const onboardedOrNew =
-    user.onboarded || Math.abs(DateTime.fromISO(user.created_at).diffNow('days').days) < 3
+  // const hasNotDismissedFbBanner = !user.metadata || !user.metadata.dismissed_fb_group_banner
+  // const onboardedOrNew =
+  //   user.onboarded || Math.abs(DateTime.fromISO(user.created_at).diffNow('days').days) < 3
 
   if (process.env.REACT_APP_MAINTENANCE_MODE === 'true') {
     return (
@@ -226,7 +227,7 @@ function Dashboard(props) {
 
   return (
     <>
-      {!isImpersonation ? null : (
+      {/* {!isImpersonation ? null : (
         <div bp="full-width 12 padding text-center" className="impersonation-banner">
           <span>
             Impersonating {user.name} ({user.email})
@@ -239,17 +240,14 @@ function Dashboard(props) {
             &#10005;
           </button>
         </div>
-      )}
+      )} */}
 
-      {!isImpersonation && hasNotDismissedFbBanner && !onboardedOrNew ? (
+      {/* {!isImpersonation && hasNotDismissedFbBanner && !onboardedOrNew ? (
         <JoinFacebookGroup />
-      ) : null}
+      ) : null} */}
 
       <div
-        className={classnames('Dashboard', {
-          impersonation: isImpersonation,
-          'dark-mode': darkMode
-        })}
+        className={classnames('Dashboard')}
       >
         {renderSideBar()}
 
@@ -270,28 +268,29 @@ function Dashboard(props) {
                 <span className="lr-burger-btn grey" />
               </div>
               <div bp="2 offset-6">
-                <SVG className="logo" src={darkMode ? logo : logo_black} />
+                <SVG className="logo" src={logo} />
               </div>
             </div>
           </div>
 
           {/* Dash Page body */}
-          <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+          <DarkModeContext.Provider>
             {props.children}
           </DarkModeContext.Provider>
 
-          {!user.is_admin &&
-          !props.location.pathname.includes('refer') &&
-          !props.location.pathname.includes('onboarding') ? (
-            <div className="refer-pill-container">
-              <Link to="/dash/refer" className="pill-sm pill-blue white-text">
-                EARN $50 <span bp="hide show@md">LEAD</span> CREDIT
+          {/* {!user.is_admin &&
+            !props.location.pathname.includes('refer') &&
+            !props.location.pathname.includes('onboarding') ? ( */}
+          <div className="refer-pill-container">
+            <Link to="/dash/refer" className="pill-sm pill-blue white-text">
+              EARN $50 <span bp="hide show@md">LEAD</span> CREDIT
               </Link>
-              <span className="credit-balance">
-                Your Credit: <strong>${credits}</strong>
-              </span>
-            </div>
-          ) : null}
+            <span className="credit-balance">
+              {/* Your Credit: <strong>${credits}</strong> */}
+                  Your Credit: <strong>$ 50</strong>
+            </span>
+          </div>
+          {/* ) : null} */}
         </div>
       </div>
     </>

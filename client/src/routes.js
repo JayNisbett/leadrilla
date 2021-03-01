@@ -4,6 +4,7 @@ import Loadable from 'react-loadable'
 
 // import Playground from './components/Playground/playground'
 import WebsitePage from './components/WebsitePage/website_page'
+import Dashboard from './components/Dashboard/dashboard'
 import LeadTypeDetailPage from './components/LeadTypeDetailPage/lead_type_detail_page'
 import FullPageLoader from './components/FullPageLoader/full_page_loader'
 import { LEAD_TYPES } from './constants/lead_types'
@@ -19,14 +20,21 @@ const Loading = props => {
 }
 
 export const routes = [
-  // {
-  //   name: 'Playground',
-  //   exact: true,
-  //   path: '/playground',
-  //   component: Playground,
-  //   env: 'development'
-  // },
- 
+  {
+    name: 'Dashboard',
+    exact: false,
+    path: '/dash',
+    component: Dashboard,
+    auth: true,
+    children: [
+      {
+        name: 'Onboarding',
+        exact: true,
+        path: '/dash/onboarding',
+        component: loadable(() => import('./views/Onboarding/onboarding'))
+      }
+    ]
+  },
   {
     name: 'WebsitePage',
     exact: false,
@@ -65,7 +73,7 @@ export const routes = [
       },
     ]
   },
-  
+
 ]
 
 routes.forEach(route => {
@@ -100,7 +108,7 @@ export const renderRoute = (
   }
 
   if (auth && !user) {
-    component = () => <Redirect to={`/login?redirect_url=${window.location.pathname}`} />
+    // component = () => <Redirect to={`/login?redirect_url=${window.location.pathname}`} />
   } else if (admin && (!user || !user.is_admin)) {
     component = () => <Redirect to="/dash/leads" />
   } else if (org_admin && !user) {
