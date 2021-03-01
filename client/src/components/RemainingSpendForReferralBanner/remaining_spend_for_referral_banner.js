@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-
-import { UserContext } from '../AuthProvider/auth_provider'
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 function RemainingSpendForReferralBanner() {
-  const { user } = useContext(UserContext)
+  const userData = useSelector(store => (store?.auth ?? {}))?.data ?? ''
+  const user = userData.user
 
   if (user.referrer && user.amount_spent < 20000) {
     return (

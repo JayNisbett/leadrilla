@@ -10,6 +10,17 @@ function WebsitePage(props) {
   const rootHtmlEle = document.getElementsByTagName('html')[0]
 
   useEffect(() => {
+
+    const rootHasTheme = theme => {
+      return rootHtmlEle.className.indexOf(theme) > -1
+    }
+
+    const setRootTheme = theme => {
+      if (!rootHasTheme(theme)) {
+        rootHtmlEle.className = theme
+      }
+    }
+
     if (props.location.pathname.indexOf('solar') > -1) {
       setTheme('solar-theme')
       localStorage.setItem('theme', 'solar-theme')
@@ -29,17 +40,9 @@ function WebsitePage(props) {
       setTheme(localStorage.getItem('theme') || 'life-theme')
       setRootTheme(localStorage.getItem('theme') || 'life-theme')
     }
-  }, [])
+  }, [props.location.pathname, rootHtmlEle.className])
 
-  const setRootTheme = theme => {
-    if (!rootHasTheme(theme)) {
-      rootHtmlEle.className = theme
-    }
-  }
 
-  const rootHasTheme = theme => {
-    return rootHtmlEle.className.indexOf(theme) > -1
-  }
 
   return (
     <ScrollToTop>

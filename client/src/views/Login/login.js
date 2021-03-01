@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from "axios"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export default function Login() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -24,7 +24,7 @@ export default function Login() {
       password: password
     }).then(res => {
       console.log(res, "rews")
-      // dispatch({ type: 'SET_AUTH', payload: res })
+      dispatch({ type: 'SET_AUTH', payload: res })
     })
   }
 

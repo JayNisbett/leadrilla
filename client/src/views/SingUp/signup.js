@@ -76,8 +76,12 @@ export default function SignUp() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    signUpData["state"] = mapState.value;
-    signUpData["industry"] = industry.value;
+    signUpData["state"] = mapState.value
+    signUpData["industry"] = industry.value
+    signUpData["is_admin"] = false
+    signUpData["onboarded"] = false
+    signUpData["type"] = ''
+    signUpData["point"] = 0
     axios.post("http://localhost:5000/api/users/signup", signUpData).then(res => {
       console.log(res.data, "res")
     })

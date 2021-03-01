@@ -79,7 +79,7 @@ router.post('/login', async (req, res) => {
                             id: user.id,
                             email: user.userInfo.email
                         }, config.jwtSecret);
-                        res.json({ token, success: 'success' })
+                        res.json({ token, success: 'success', user: user.userInfo })
                     } else {
                         res.json({ errors: { invalidCredentials: 'Invalid Email address or Password' } });
                     }

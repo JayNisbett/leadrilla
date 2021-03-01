@@ -14,27 +14,27 @@ function FloatingShapes(props) {
       )
       s.style.setProperty('opacity', '1')
     })
-  }, [])
+  }, [props.shapes])
 
   return (
     <div className={classnames(['FloatingShapes'])}>
       <div className={classnames({ 'skew-container': props.skew })}>
         {props.shapes && props.shapes.length > 0
           ? props.shapes.map((shape, i) => {
-              return (
-                <div
-                  className={classnames([
-                    props.shape || 'circle',
-                    {
-                      float: !props.preventFloat,
-                      'reverse-float': shape.reverseSlide
-                    }
-                  ])}
-                  id={`circle-${i}`}
-                  key={i}
-                />
-              )
-            })
+            return (
+              <div
+                className={classnames([
+                  props.shape || 'circle',
+                  {
+                    float: !props.preventFloat,
+                    'reverse-float': shape.reverseSlide
+                  }
+                ])}
+                id={`circle-${i}`}
+                key={i}
+              />
+            )
+          })
           : ''}
       </div>
     </div>

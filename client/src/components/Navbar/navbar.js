@@ -42,7 +42,7 @@ function Navbar(props) {
         <div bp="grid">
           <div bp="4 offset-5 text-center">
             <Link to="/">
-              <SVG className="logo" src={logo} className="header-logo"/>
+              <SVG className="logo header-logo" src={logo} />
             </Link>
           </div>
 
@@ -162,30 +162,30 @@ function Navbar(props) {
                   Dashboard
                 </Link>
               ) : (
-                <>
-                  <Link
-                    to="/login"
-                    className={classnames([
-                      'login-btn',
-                      'bold',
-                      { 'solar-light': props.location.pathname === '/solar' }
-                    ])}
-                  >
-                    Log in
+                  <>
+                    <Link
+                      to="/login"
+                      className={classnames([
+                        'login-btn',
+                        'bold',
+                        { 'solar-light': props.location.pathname === '/solar' }
+                      ])}
+                    >
+                      Log in
                   </Link>
-                  <Link
-                    to="/signup"
-                    className={classnames([
-                      'signup-btn',
-                      'btn',
-                      'btn-white',
-                      { 'solar-light': props.location.pathname === '/solar' }
-                    ])}
-                  >
-                    Sign up
+                    <Link
+                      to="/signup"
+                      className={classnames([
+                        'signup-btn',
+                        'btn',
+                        'btn-white',
+                        { 'solar-light': props.location.pathname === '/solar' }
+                      ])}
+                    >
+                      Sign up
                   </Link>
-                </>
-              )}
+                  </>
+                )}
             </div>
           </div>
         </div>
