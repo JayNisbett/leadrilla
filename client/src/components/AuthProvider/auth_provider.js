@@ -9,7 +9,7 @@ export const UserContext = React.createContext(null)
 
 export default function AuthProvider(props) {
 
-  const userData = useSelector(store => (store?.auth ?? {}))?.data ?? ''
+  const userData = useSelector(store => (store?.auth ?? {})) ?? ''
 
   const [user, setUserInState] = useState(userData.user)
 

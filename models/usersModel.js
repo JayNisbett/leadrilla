@@ -4,7 +4,11 @@ const UserSchema = mongoose.Schema({
     userInfo: {
         type: Object
     }
-});
+},
+    {
+        timestamps: true
+    }
+);
 
 const User = mongoose.model('User', UserSchema)
 

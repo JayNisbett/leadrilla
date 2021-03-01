@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { isEmpty } from 'lodash'
 import classnames from 'classnames'
 import logo from '../../assets/svg/logo.svg'
@@ -11,8 +11,10 @@ export default function Dashboard(props) {
 
   const user = useSelector(store => (store?.auth ?? {}))?.data?.user ?? ''
   const [sideBarOpenClass, setSideBarOpenClass] = useState(false)
+  const dispatch = useDispatch();
 
   const logOut = () => {
+    dispatch({ type: "LOG_OUT", payload: null })
     props.history.push('/')
   }
 

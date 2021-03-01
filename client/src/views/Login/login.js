@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login(props) {
 
-  const token = useSelector(store => (store?.auth ?? {}))?.data?.token ?? ''
+  const token = useSelector(store => (store?.auth ?? {}))?.token ?? ''
 
   // If logined, to edirect
   if (token) {
@@ -38,7 +38,7 @@ export default function Login(props) {
       } else {
         setErrorMsg("")
       }
-      dispatch({ type: 'SET_AUTH', payload: res })
+      dispatch({ type: 'SET_AUTH', payload: res.data })
     })
   }
 

@@ -1,17 +1,17 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SVG from 'react-inlinesvg'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-
-import { UserContext } from '../AuthProvider/auth_provider'
 import { useSelector } from 'react-redux'
 import logo from '../../assets/svg/logo.svg'
 
 function Navbar(props) {
-  const token = useSelector(store => (store?.auth ?? {}))?.data?.token ?? ''
+  const token = useSelector(state => (state?.auth ?? {}))?.token ?? ''
+  // const store = useSelector(store => (store))
+  const store = useSelector(state => (state))
   const [showMobileDropdown, setShowMobileDropdown] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -27,15 +27,15 @@ function Navbar(props) {
     setShowDropdown(!showDropdown)
   }
 
-  const { user } = useContext(UserContext)
-
   let dashboardLink = '/dash/lead-feeds'
 
-  if (user && user.type === 'admin') {
-    dashboardLink = '/dash/metrics'
-  } else if (user && user.type === 'org_admin') {
-    dashboardLink = '/org-admin/dash'
-  }
+  // if (user && user.type === 'admin') {
+  //   dashboardLink = '/dash/metrics'
+  // } else if (user && user.type === 'org_admin') {
+  //   dashboardLink = '/org-admin/dash'
+  // }
+
+  console.log(token, "token", store)
 
   const renderDropdown = () => {
     let dropdownClass = showMobileDropdown ? 'open' : 'close'
@@ -74,7 +74,7 @@ function Navbar(props) {
               Solar
             </Link>
 
-            {token ? (
+            {token.length > 0 ? (
               <Link bp="12" onClick={closeMobileDropdown} to={dashboardLink}>
                 Dashboard
               </Link>
@@ -159,7 +159,7 @@ function Navbar(props) {
             </div>
 
             <div bp="fill hide show@md" className="nav-action-btns nav-items">
-              {token ? (
+              {token.length > 0 ? (
                 <Link to={dashboardLink} className="nav-item dashboard-link">
                   Dashboard
                 </Link>

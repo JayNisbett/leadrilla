@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import validator from 'validator';
 import axios from "axios";
 import Select from 'react-select';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function SignUp(props) {
 
+  const dispatch = useDispatch();
   const token = useSelector(store => (store?.auth ?? {}))?.data?.token ?? ''
 
   // If logined, to edirect
@@ -78,10 +79,6 @@ export default function SignUp(props) {
 
     setPageHeader('2. Tell us about you');
     setPageTab(false)
-
-    // axios.post("http://localhost:5000/api/users/signup", signUpData).then(res => {
-    //   console.log(res.data, "res")
-    // })
   }
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -92,8 +89,17 @@ export default function SignUp(props) {
     signUpData["type"] = ''
     signUpData["point"] = 0
     signUpData["amount_spent"] = 0
+
     axios.post("http://localhost:5000/api/users/signup", signUpData).then(res => {
-      console.log(res.data, "res")
+      if (!Boolean(res.data.error)) {
+        axios.post("http://localhost:5000/api/users/login", {
+          email: signUpData.email,
+          password: signUpData.password
+        }).then(res => {
+          dispatch({ type: 'SET_AUTH', payload: res.data })
+        })
+        props.history.push('/')
+      }
     })
   }
 

@@ -9,6 +9,11 @@ const auth = (state = initialState, { type, payload = null }) => {
       return { ...state, ...payload }
     case 'UPDATE_AUTH_COLSURE':
       return payload(state)
+    case 'LOG_OUT': {
+      return {
+        state: payload
+      }
+    }
     default:
       return state
   }
