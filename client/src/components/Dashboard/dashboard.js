@@ -8,13 +8,12 @@ import { MEDIUM } from '../../constants/screen_sizes'
 import RemainingSpendForReferralBanner from '../RemainingSpendForReferralBanner/remaining_spend_for_referral_banner'
 
 export default function Dashboard(props) {
-  const userData = useSelector(store => (store?.auth ?? {}))?.data ?? ''
-  const user = userData.user
+
+  const user = useSelector(store => (store?.auth ?? {}))?.data?.user ?? ''
   const [sideBarOpenClass, setSideBarOpenClass] = useState(false)
 
   const logOut = () => {
-    // removeUser()
-    // props.history.push('/')
+    props.history.push('/')
   }
 
   const openSideBar = () => {
@@ -115,13 +114,13 @@ export default function Dashboard(props) {
     )
   }
 
-  const hasRecommendations = !user.amount_spent && !isEmpty(user.recommendations)
+  const hasRecommendations = !user?.amount_spent && !isEmpty(user?.recommendations)
 
   const navItems = [
     { to: '/dash/metrics', text: 'Metrics', admin: true, user: false },
     { to: '/dash/lead-feeds', text: 'Lead Feeds', admin: true, user: true },
     { to: '/dash/marketplace', text: 'Marketplace', admin: true, user: true },
-    { to: '/dash/leads', text: user.is_admin ? 'Leads' : 'My Leads', admin: true, user: true },
+    { to: '/dash/leads', text: user?.is_admin ? 'Leads' : 'My Leads', admin: true, user: true },
     { to: '/dash/billing', text: 'Billing', admin: false, user: true },
     { to: '/dash/users', text: 'Users', admin: true, user: false },
     { to: '/dash/products', text: 'Products', admin: true, user: false },

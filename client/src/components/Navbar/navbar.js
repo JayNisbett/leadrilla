@@ -7,9 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 import { UserContext } from '../AuthProvider/auth_provider'
+import { useSelector } from 'react-redux'
 import logo from '../../assets/svg/logo.svg'
 
 function Navbar(props) {
+  const token = useSelector(store => (store?.auth ?? {}))?.data?.token ?? ''
   const [showMobileDropdown, setShowMobileDropdown] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -72,7 +74,7 @@ function Navbar(props) {
               Solar
             </Link>
 
-            {user && user.city ? (
+            {token ? (
               <Link bp="12" onClick={closeMobileDropdown} to={dashboardLink}>
                 Dashboard
               </Link>
@@ -157,7 +159,7 @@ function Navbar(props) {
             </div>
 
             <div bp="fill hide show@md" className="nav-action-btns nav-items">
-              {user && user.city ? (
+              {token ? (
                 <Link to={dashboardLink} className="nav-item dashboard-link">
                   Dashboard
                 </Link>

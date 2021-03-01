@@ -81,11 +81,11 @@ router.post('/login', async (req, res) => {
                         }, config.jwtSecret);
                         res.json({ token, success: 'success', user: user.userInfo })
                     } else {
-                        res.json({ errors: { invalidCredentials: 'Invalid Email address or Password' } });
+                        res.json({ error: { invalidCredentials: 'Invalid Email address or Password' } });
                     }
                 });
             } else {
-                res.json({ errors: { invalidCredentials: 'Invalid Email address or Password' } });
+                res.json({ error: { invalidCredentials: 'Invalid Email address or Password' } });
             }
         });
     } catch (error) {

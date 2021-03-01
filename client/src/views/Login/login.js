@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import axios from "axios"
-import { useDispatch } from 'react-redux';
 
-export default function Login() {
+import { useDispatch, useSelector } from 'react-redux';
+
+export default function Login(props) {
+
+  const token = useSelector(store => (store?.auth ?? {}))?.data?.token ?? ''
+
+  // If logined, to edirect
+  if (token) {
+    props.history.push('/')
+  }
+
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
@@ -18,12 +29,15 @@ export default function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
     axios.post("http://localhost:5000/api/users/login", {
       email: email,
       password: password
     }).then(res => {
-      console.log(res, "rews")
+      if (Boolean(res.data?.error)) {
+        setErrorMsg("Invalid Email address or Password")
+      } else {
+        setErrorMsg("")
+      }
       dispatch({ type: 'SET_AUTH', payload: res })
     })
   }
@@ -50,7 +64,7 @@ export default function Login() {
                 <form onSubmit={handleLogin}>
                   <p className="hide"></p>
                   <div bp="margin-bottom">
-                    <p className="error-message"></p>
+                    <p className="error-message">{errorMsg}</p>
                     <label>Email Address</label>
                     <input
                       type="email"

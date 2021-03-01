@@ -2,8 +2,17 @@ import React, { useState } from 'react';
 import validator from 'validator';
 import axios from "axios";
 import Select from 'react-select';
+import { useSelector } from 'react-redux'
 
-export default function SignUp() {
+export default function SignUp(props) {
+
+  const token = useSelector(store => (store?.auth ?? {}))?.data?.token ?? ''
+
+  // If logined, to edirect
+  if (token) {
+    props.history.push('/')
+  }
+
   const [signUpData, setSignUpData] = useState({})
   const [errors, setError] = useState({})
   const [agree, setAgree] = useState(false);
@@ -82,6 +91,7 @@ export default function SignUp() {
     signUpData["onboarded"] = false
     signUpData["type"] = ''
     signUpData["point"] = 0
+    signUpData["amount_spent"] = 0
     axios.post("http://localhost:5000/api/users/signup", signUpData).then(res => {
       console.log(res.data, "res")
     })

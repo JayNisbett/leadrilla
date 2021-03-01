@@ -1,7 +1,9 @@
 /* eslint no-undef: 0 */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { setUserProperties, resetIdentity } from '../../helpers/heap_analytics'
+import backend from '../../backend'
 import { useSelector } from 'react-redux';
+import { OK } from '../../constants/error_codes'
 
 export const UserContext = React.createContext(null)
 
@@ -25,6 +27,22 @@ export default function AuthProvider(props) {
     resetIdentity()
   }
 
+  useEffect(() => {
+    const fetchMe = () => {
+      backend.get('/users/me').then(({ status, body: u }) => {
+        if (status === OK) {
+          setUser(u)
+        } else {
+          removeUser()
+        }
+      })
+    }
+    if (localStorage.getItem('token')) {
+      fetchMe()
+    } else {
+      setUserInState(null)
+    }
+  }, [])
 
   if (user || user === null) {
     return (
