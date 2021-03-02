@@ -13,10 +13,119 @@
 .css-2b097c-container {
   margin-top: 10px;
 }
-.css-yk16xz-control, .css-1pahdxg-control {
+.css-yk16xz-control,
+.css-1pahdxg-control {
   border-radius: 10px !important;
   min-height: 49px !important;
 }
 .css-26l3qy-menu {
   z-index: 99 !important;
+}
+input.pac-target-input {
+  padding: 10px 5px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+.onboarding-step {
+  margin-top: 20px;
+}
+.custom-radios {
+  .MuiFormControlLabel-root {
+    padding-right: 16px;
+    margin: 6px;
+    background: #fff;
+    border-radius: 8px;
+  }
+  .MuiFormControlLabel-label {
+    text-transform: none;
+    font-size: 14px;
+    color: #444;
+    font-size: 14px;
+    font-family: "Assistant", sans-serif;
+  }
+}
+.Stepper {
+  padding: 20px;
+  background: linear-gradient(330deg, #6e81d4 0%, #384eac 100%);
+  border-radius: 12px;
+  .MuiStepper-root {
+    padding: 20px 5px !important;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .onboarding-step {
+    color: #fff;
+    p {
+      font-size: 12px;
+    }
+  }
+  .step-body {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 20px;
+  }
+  .MuiSvgIcon-root {
+    cursor: pointer;
+  }
+  .custom-radios {
+    h4 {
+      margin-top: -32px;
+      font-size: 18px;
+      color: #fff;
+      padding-left: 6px;
+      padding-bottom: 6px;
+      text-transform: capitalize;
+    }
+    h5 {
+      color: #fff;
+      padding-left: 6px;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  button:disabled {
+    color: #888;
+    background-color: #e4e4e4;
+    &:hover {
+      cursor: no-drop;
+    }
+  }
+  .kind-title {
+    color: #444 !important;
+    font-size: 16px !important;
+  }
+  .kind-desription {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .kind-dec-item {
+    text-align: center;
+    h5 {
+      color: #444;
+      text-transform: uppercase;
+      font-size: 12px !important;
+    }
+    p {
+      font-weight: 600;
+      font-size: 19px !important;
+      color: #394fad !important;
+    }
+  }
+}
+.custom-radios.step-4 {
+  .MuiFormControlLabel-root {
+    width: 100% !important;
+  }
+  .MuiFormControlLabel-label {
+    width: 100% !important;
+  }
+}
+.Stepper * {
+  font-family: "Assistant", sans-serif !important;
 }

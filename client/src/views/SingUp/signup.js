@@ -98,7 +98,7 @@ export default function SignUp(props) {
         }).then(res => {
           dispatch({ type: 'SET_AUTH', payload: res.data })
         })
-        props.history.push('/')
+        props.history.push('/dash/onboarding')
       }
     })
   }
