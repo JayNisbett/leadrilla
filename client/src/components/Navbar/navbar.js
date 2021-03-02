@@ -10,8 +10,6 @@ import logo from '../../assets/svg/logo.svg'
 
 function Navbar(props) {
   const token = useSelector(state => (state?.auth ?? {}))?.token ?? ''
-  // const store = useSelector(store => (store))
-  const store = useSelector(state => (state))
   const [showMobileDropdown, setShowMobileDropdown] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -28,14 +26,6 @@ function Navbar(props) {
   }
 
   let dashboardLink = '/dash/lead-feeds'
-
-  // if (user && user.type === 'admin') {
-  //   dashboardLink = '/dash/metrics'
-  // } else if (user && user.type === 'org_admin') {
-  //   dashboardLink = '/org-admin/dash'
-  // }
-
-  console.log(token, "token", store)
 
   const renderDropdown = () => {
     let dropdownClass = showMobileDropdown ? 'open' : 'close'

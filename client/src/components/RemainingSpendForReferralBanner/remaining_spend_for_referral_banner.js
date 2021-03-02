@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 function RemainingSpendForReferralBanner() {
   const userData = useSelector(store => (store?.auth ?? {})) ?? ''
-  const user = userData.user
+  const user = userData?.user
 
   if (user.referrer && user.amount_spent < 20000) {
     return (

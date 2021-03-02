@@ -5,6 +5,7 @@ const path = require('path');
 require('dotenv').config();
 
 const users = require('./routes/usersRoute.js');
+const leads = require('./routes/leadsRoute.js');
 const config = require('./config.js');
 
 const MONGODB_URI = config.mongodburi || 'mongodb://localhost/liveleads';
@@ -27,22 +28,23 @@ mongoose.connection.on('error', (error) => {
 let app = express();
 
 // Body Parser Middleware
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use((req, res, next) => {
-     res.header("Access-Control-Allow-Origin", "*");
-     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-     if (req.method === 'OPTIONS') {
-         res.header("Access-Control-Allow-Methods", "PUT, POST, DELETE, GET");
-         return res.status(200).json({});
-     }
-     next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    if (req.method === 'OPTIONS') {
+        res.header("Access-Control-Allow-Methods", "PUT, POST, DELETE, GET");
+        return res.status(200).json({});
+    }
+    next();
 });
 
 app.use('/api/users', users);
+app.use('/api/leads', leads);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/client/build/index.html'));

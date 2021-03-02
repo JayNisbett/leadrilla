@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../models/usersModel.js');
 const config = require('../config');
-const { db } = require('../models/usersModel.js');
 const router = express.Router();
 
 const checkUserUniqueness = (field, value) => {
