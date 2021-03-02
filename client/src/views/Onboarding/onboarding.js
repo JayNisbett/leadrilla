@@ -33,9 +33,11 @@ export default function Onboarding() {
   const [activeStep, setActiveStep] = useState(0);
   const [location, setLocation] = useState() //Step 1 rusult
   const [spend, setSpend] = useState() //Step 2 result
-  const [products, setProducts] = useState(null)
+  const [industry, setIndustry] = useState([])
   const [subProduct, setSubProduct] = useState(null)
   const [kind, setKind] = useState(null)
+
+  const [products, setProducts] = useState(null)
   const [nextAble, setNextAble] = useState(false)
   const steps = getSteps();
 
@@ -48,13 +50,18 @@ export default function Onboarding() {
   };
 
   const handleSubmit = () => {
-    axios.post("http://localhost:5000/api/leaad/onboarding", {
-      // email: email,
-      location: location,
-      spend: spend,
 
-      // password: password
-
+    const leadData = {
+      'location': location,
+      'spend': spend,
+      'industry': industry,
+      'subProduct': subProduct,
+      'kind': kind,
+      'userId': userInfo.id
+    }
+    console.log(leadData)
+    axios.post("http://localhost:5000/api/leads/onboarding", {
+      leadData
     }).then(res => {
       console.log(res, "error")
     })
@@ -134,9 +141,8 @@ export default function Onboarding() {
   }
 
   const IndustriesComponent = () => {
-    const [industry, setIndustry] = useState([])
     useEffect(() => {
-      if (!isEmpty(subProduct)) {
+      if (!isEmpty(subProduct) || industry === '1') {
         setNextAble(true)
       } else {
         setNextAble(false)
@@ -223,7 +229,7 @@ export default function Onboarding() {
     }
     return (
       <div style={{ marginTop: 30 }} className="custom-radios step-4">
-        <h4>Select your industry</h4>
+        <h4>What kind of leads do you want?</h4>
         <FormControl component="fieldset">
           <RadioGroup row value={kind} onChange={(e) => setKind(e.target.value)}>
             {kinds.map((item, key) => (
@@ -288,60 +294,60 @@ export default function Onboarding() {
 
 const spens = [
   {
-    value: 0,
+    value: '0',
     label: "I'm new to buying leads"
   },
   {
-    value: 1,
+    value: '1',
     label: "less than $250"
   },
   {
-    value: 2,
+    value: '2',
     label: "$250 - $500"
   },
   {
-    value: 3,
+    value: '3',
     label: "$500 - $1000"
   },
   {
-    value: 4,
+    value: '4',
     label: "more than $1000"
   }
 ]
 
 const industries = [
   {
-    value: 0,
+    value: '0',
     label: "Life Insurance",
     product: [
       {
-        value: 0,
+        value: '0',
         label: 'Final Expense'
       },
       {
-        value: 1,
+        value: '1',
         label: 'Mortgaga Protection'
       },
       {
-        value: 2,
+        value: '2',
         label: 'Agent Hiring'
       }
     ]
   },
   {
-    value: 1,
+    value: '1',
     label: "Solar"
   },
   {
-    value: 2,
+    value: '2',
     label: "Medicare",
     product: [
       {
-        value: 0,
+        value: '0',
         label: 'Medicare Supplement'
       },
       {
-        value: 1,
+        value: '1',
         label: 'Medicare Turning 65'
       }
     ]
@@ -350,7 +356,7 @@ const industries = [
 
 const kinds = [
   {
-    value: 0,
+    value: '0',
     title: 'Real time, exclusive leads',
     description: [
       {
@@ -361,7 +367,7 @@ const kinds = [
     ]
   },
   {
-    value: 1,
+    value: '1',
     title: 'Aged or 2nd chance leads',
     description: [
       {
@@ -372,7 +378,7 @@ const kinds = [
     ]
   },
   {
-    value: 2,
+    value: '2',
     title: 'A mix of both real-time and aged leads',
   }
 ]
