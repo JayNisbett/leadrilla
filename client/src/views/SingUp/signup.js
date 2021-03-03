@@ -90,9 +90,9 @@ export default function SignUp(props) {
     signUpData["point"] = 0
     signUpData["amount_spent"] = 0
 
-    axios.post("http://localhost:5000/api/users/signup", signUpData).then(res => {
+    axios.post("/api/users/signup", signUpData).then(res => {
       if (!Boolean(res.data.error)) {
-        axios.post("http://localhost:5000/api/users/login", {
+        axios.post("/api/users/login", {
           email: signUpData.email,
           password: signUpData.password
         }).then(res => {

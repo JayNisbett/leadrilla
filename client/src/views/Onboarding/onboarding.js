@@ -59,7 +59,7 @@ export default function Onboarding(props) {
       'kind': kind,
       'userId': userInfo.id
     }
-    axios.post("http://localhost:5000/api/leads/onboarding", {
+    axios.post("/api/leads/onboarding", {
       leadData
     }).then(res => {
       props.history.push('/dash/confirm-creat')
