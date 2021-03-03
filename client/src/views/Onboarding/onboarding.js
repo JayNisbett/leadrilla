@@ -60,7 +60,7 @@ export default function Onboarding() {
       'userId': userInfo.id
     }
     console.log(leadData)
-    axios.post("http://localhost:5000/api/leads/onboarding", {
+    axios.post("http://216.137.179.178:5000/api/leads/onboarding", {
       leadData
     }).then(res => {
       console.log(res, "error")
