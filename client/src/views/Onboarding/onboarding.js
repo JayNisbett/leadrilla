@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Onboarding() {
+export default function Onboarding(props) {
   const userInfo = useSelector(store => (store?.auth ?? {}))?.user ?? ''
 
   const classes = useStyles();
@@ -59,11 +59,10 @@ export default function Onboarding() {
       'kind': kind,
       'userId': userInfo.id
     }
-    console.log(leadData)
-    axios.post("http://216.137.179.178:5000/api/leads/onboarding", {
+    axios.post("http://localhost:5000/api/leads/onboarding", {
       leadData
     }).then(res => {
-      console.log(res, "error")
+      props.history.push('/dash/confirm-creat')
     })
   }
   function getSteps() {

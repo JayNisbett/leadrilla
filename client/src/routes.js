@@ -32,6 +32,12 @@ export const routes = [
         exact: true,
         path: '/dash/onboarding',
         component: loadable(() => import('./views/Onboarding/onboarding'))
+      },
+      {
+        name: 'ConfirmCreat',
+        exact: true,
+        path: '/dash/confirm-creat',
+        component: loadable(() => import('./views/ConfirmCreat/confirm_creat'))
       }
     ]
   },

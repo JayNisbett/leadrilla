@@ -48,7 +48,6 @@ export default function AuthProvider(props) {
     return (
       <UserContext.Provider value={{ user, setUser, removeUser }}>
         {props.children}
-        {console.log()}
       </UserContext.Provider>
     )
   } else {
